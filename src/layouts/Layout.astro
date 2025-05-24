@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import '../styles/fonts.css';
 
 interface Props {
   title: string;
@@ -19,6 +20,8 @@ const { title, description = "Welcome to my portfolio" } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <slot />
+    <div class="mx-3 xl:mx-auto max-w-[1280px]">
+      <slot />
+    </div>
   </body>
 </html> 

@@ -1,6 +1,8 @@
 ---
 import '../styles/global.css';
 import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Thumbnail from '../components/Thumbnail.astro';
 ---
 
 <html lang="en">
@@ -12,8 +14,18 @@ import Layout from '../layouts/Layout.astro';
 		<title>Astro</title>
 	</head>
 	<body>
-		<Layout title="My Portfolio">
-			<h1>Welcome to My Portfolio</h1>
+		<Layout title="Justin White - Portfolio">
+			<Nav />
+			<main>
+				<h1 class="mt-12 max-w-[800px] mx-auto text-center font-pangaia text-[1.25rem] leading-[1.55rem] md:text-[1.55rem] md:leading-[1.75rem] xl:text-[1.75rem] xl:leading-[1.95rem]">I'm a senior product designer specialized in designing for complex workflows. Previously designed for teams at meta, lululemon and ecobee.</h1>
+				<div class="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4">
+					<Thumbnail imgSrc="/assets/thumbnails/Thumbnail-ownright.webp" alt="Ownright Thumbnail" projectName="project-name" accentInfo="accent-info" />
+					<Thumbnail imgSrc="/assets/thumbnails/Thumbnail-lululemon.webp" alt="lululemon Thumbnail" projectName="project-name" accentInfo="accent-info" />
+					<Thumbnail imgSrc="/assets/thumbnails/Thumbnail-messenger.webp" alt="Messenger Thumbnail" projectName="project-name" accentInfo="accent-info" />
+					<Thumbnail imgSrc="/assets/thumbnails/Thumbnail-bulletins.webp" alt="Bulletins Thumbnail" projectName="project-name" accentInfo="accent-info" />
+					<Thumbnail imgSrc="/assets/thumbnails/Thumbnail-tread.webp" alt="Tread Thumbnail" projectName="project-name" accentInfo="accent-info" />
+				</div>
+			</main>
 		</Layout>
 	</body>
 </html>
