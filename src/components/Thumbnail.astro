@@ -7,10 +7,10 @@ export interface Props {
 }
 const { imgSrc, alt, projectName, accentInfo } = Astro.props;
 ---
-<div class="relative group aspect-[4/3] bg-gray-200 rounded-lg overflow-hidden flex items-center justify-center">
+<div class="relative group aspect-[4/3] bg-gray-200 rounded-lg overflow-hidden flex items-center justify-center cursor-pointer">
   <img src={imgSrc} alt={alt} class="object-cover w-full h-full transition-transform duration-150 group-hover:scale-[1.02]" />
   <div class="absolute inset-0 bg-[rgba(0,0,0,0.03)] opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
-  <div class="absolute left-3 bottom-3 flex space-x-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+  <div class="absolute left-3 bottom-3 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
     <span class="bg-white border border-gray-200 rounded-[4px] px-2 py-[2px] text-[12px] font-neuecorp font-medium">{projectName}</span>
     <span class="bg-white border border-gray-200 rounded-[4px] px-2 py-[2px] text-[12px] font-neuecorp font-medium">{accentInfo}</span>
   </div>

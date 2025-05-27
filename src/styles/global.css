@@ -67,4 +67,16 @@
   .text-pretty {
     text-wrap: pretty;
   }
+}
+
+/* Hide default cursor */
+* {
+  cursor: none !important;
+}
+
+/* Show default cursor for touch devices */
+@media (hover: none) {
+  * {
+    cursor: auto !important;
+  }
 } 

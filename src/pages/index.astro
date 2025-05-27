@@ -19,11 +19,21 @@ import Thumbnail from '../components/Thumbnail.astro';
 			<main>
 				<h1 class="mt-12 max-w-[800px] mx-auto text-center font-pangaia text-[1.25rem] leading-[1.55rem] md:text-[1.55rem] md:leading-[1.75rem] xl:text-[1.75rem] xl:leading-[1.95rem]">I'm a senior product designer specialized in designing for complex workflows. Previously designed for teams at meta, lululemon and ecobee.</h1>
 				<div class="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4">
-					<Thumbnail imgSrc="/assets/thumbnails/Thumbnail-ownright.webp" alt="Ownright Thumbnail" projectName="project-name" accentInfo="accent-info" />
-					<Thumbnail imgSrc="/assets/thumbnails/Thumbnail-lululemon.webp" alt="lululemon Thumbnail" projectName="project-name" accentInfo="accent-info" />
-					<Thumbnail imgSrc="/assets/thumbnails/Thumbnail-messenger.webp" alt="Messenger Thumbnail" projectName="project-name" accentInfo="accent-info" />
-					<Thumbnail imgSrc="/assets/thumbnails/Thumbnail-bulletins.webp" alt="Bulletins Thumbnail" projectName="project-name" accentInfo="accent-info" />
-					<Thumbnail imgSrc="/assets/thumbnails/Thumbnail-tread.webp" alt="Tread Thumbnail" projectName="project-name" accentInfo="accent-info" />
+					<a href="/ownright" class="block text-black">
+						<Thumbnail imgSrc="/assets/thumbnails/Thumbnail-ownright.webp" alt="Ownright Thumbnail" projectName="Internal legal app" accentInfo="Ownright Law" />
+					</a>
+					<a href="/lululemon" class="block text-black">
+						<Thumbnail imgSrc="/assets/thumbnails/Thumbnail-lululemon.webp" alt="lululemon Thumbnail" projectName="Wanderwell" accentInfo="lululemon" />
+					</a>
+					<a href="/messenger" class="block text-black">
+						<Thumbnail imgSrc="/assets/thumbnails/Thumbnail-messenger.webp" alt="Messenger Thumbnail" projectName="Workplace x Messenger" accentInfo="Meta" />
+					</a>
+					<a href="/bulletins" class="block text-black">
+						<Thumbnail imgSrc="/assets/thumbnails/Thumbnail-bulletins.webp" alt="Bulletins Thumbnail" projectName="Workplace Bulletins" accentInfo="Meta" />
+					</a>
+					<a href="/tread" class="block text-black">
+						<Thumbnail imgSrc="/assets/thumbnails/Thumbnail-tread.webp" alt="Tread Thumbnail" projectName="Worksite Geofences" accentInfo="Tread technologies" />
+					</a>
 				</div>
 			</main>
 		</Layout>
