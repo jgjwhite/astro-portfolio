@@ -1,0 +1,45 @@
+---
+interface Props {
+  title: string;
+  heroImage: string;
+}
+
+const { title, heroImage } = Astro.props;
+---
+
+<main class="mx-auto max-w-[1200px] px-3 sm:px-4">
+  <!-- Header Section -->
+  <section class="mb-12 sm:mb-16 md:mb-24">
+    <h1 class="text-h1 mx-auto max-w-[700px] text-center mb-12 sm:mb-16 md:mb-24">
+      {title}
+    </h1>
+    <div class="relative aspect-[1200/620] w-full bg-gray-100">
+      <img
+        src={heroImage}
+        alt={title}
+        class="w-full h-full object-cover"
+      />
+    </div>
+  </section>
+
+  <!-- Content Sections -->
+  <slot name="content" />
+
+  <!-- Next Project Section -->
+  <section class="mt-12 sm:mt-16 md:mt-24">
+    <slot name="nextProject" />
+  </section>
+</main>
+
+<style>
+  main {
+    margin: 0 auto;
+  }
+  
+  @media (min-width: 1200px) {
+    main {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+</style> 

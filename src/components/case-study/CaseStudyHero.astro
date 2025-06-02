@@ -1,0 +1,17 @@
+---
+export interface Props {
+  title: string;
+  image: string;
+}
+
+const { title, image } = Astro.props;
+---
+
+<div class="max-w-5xl mx-auto">
+  <h1 class="mt-12 mb-5 max-w-[800px] mx-auto text-center font-pangaia text-[1.25rem] leading-[1.55rem] md:text-[1.55rem] md:leading-[1.75rem] xl:text-[1.75rem] xl:leading-[1.95rem]">
+    {title}
+  </h1>
+  <div class="aspect-[5/3] w-full">
+    <img src={image} alt={title} class="w-full h-full object-cover rounded-lg" />
+  </div>
+</div> 
