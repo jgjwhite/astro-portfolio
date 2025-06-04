@@ -4,10 +4,11 @@ import Navbar from '../components/shared/Navbar.astro';
 
 interface Props {
   title: string;
-  heroImage: string;
+  heroImageDesktop: string;
+  heroImageMobile: string;
 }
 
-const { title, heroImage } = Astro.props;
+const { title, heroImageDesktop, heroImageMobile } = Astro.props;
 ---
 
 <Layout title={title} bodyClass="case-study-page">
@@ -17,16 +18,20 @@ const { title, heroImage } = Astro.props;
     <h1 class="text-h1 text-center mb-6 md:mb-8">
       {title}
     </h1>
-    <div class="relative aspect-[1200/620] w-full bg-gray-100 mb-12 sm:mb-16 md:mb-24">
-      <img
-        src={heroImage}
-        alt={title}
-        class="w-full h-full object-cover"
-      />
+    <div class="relative w-full bg-gray-100 mb-24 sm:mb-32 md:mb-48">
+      <picture>
+        <source media="(max-width: 640px)" srcset={heroImageMobile}>
+        <source media="(min-width: 641px)" srcset={heroImageDesktop}>
+        <img
+          src={heroImageDesktop}
+          alt={title}
+          class="w-full h-full object-cover rounded-xl"
+        />
+      </picture>
     </div>
 
     <!-- Content Section -->
-    <div class="[&>*:not(:last-child)]:mb-12 [&>*:not(:last-child)]:sm:mb-16 [&>*:not(:last-child)]:md:mb-24">
+    <div class="[&>*:not(:last-child)]:mb-24 [&>*:not(:last-child)]:sm:mb-32 [&>*:not(:last-child)]:md:mb-48">
       <slot />
     </div>
 

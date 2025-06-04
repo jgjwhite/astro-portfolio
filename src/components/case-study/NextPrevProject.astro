@@ -6,11 +6,11 @@ interface Props {
 const { currentProject } = Astro.props;
 
 const projects = [
-  { id: "ownright", title: "lululemon Wanderwell", route: "/lululemon" },
-  { id: "lululemon", title: "Workplace x Messenger Integration", route: "/messenger" },
-  { id: "messenger", title: "Workplace Bulletins", route: "/bulletins" },
-  { id: "bulletins", title: "Tread Polygonal Sites", route: "/tread" },
-  { id: "tread", title: "Internal legal app", route: "/ownright" }
+  { id: "ownright", title: "Ownright Law", route: "/lululemon" },
+  { id: "lululemon", title: "lululemon Wanderwell", route: "/messenger" },
+  { id: "messenger", title: "Workplace x Messenger", route: "/bulletins" },
+  { id: "bulletins", title: "Workplace Bulletins", route: "/tread" },
+  { id: "tread", title: "Tread work sites", route: "/ownright" }
 ];
 
 const filteredProjects = projects.filter(project => project.id !== currentProject);

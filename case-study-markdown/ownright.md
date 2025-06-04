@@ -1,10 +1,10 @@
 # Case Study Content Template
 
 ## Basic Page Information
-- **Project ID**: `[ownright|lululemon|messenger|bulletins|tread]` (for NextPrevProject filtering)
-- **Page Title**: [Project Name - Case Study Title]
-- **Hero Image Desktop**: `/assets/case-studies/[project-id]/hero-desktop.webp` (16:9 or wider aspect ratio)
-- **Hero Image Mobile**: `/assets/case-studies/[project-id]/hero-mobile.webp` (4:3 or taller aspect ratio)
+- **Project ID**: `ownright` (for NextPrevProject filtering)
+- **Page Title**: Ownright Law
+- **Hero Image Desktop**: `/assets/case-studies/ownright/ownright-desktop.webp` (16:9 or wider aspect ratio)
+- **Hero Image Mobile**: `/assets/case-studies/ownright/ownright-mobile.webp` (4:3 or taller aspect ratio)
 
 ---
 
@@ -12,153 +12,87 @@
 
 ### 1. SplitText - Project Introduction
 **Component**: `<SplitText>`
-- **Title**: [Section title - e.g., "Overview"]
-- **Subtitle**: [Optional subtitle in gray]
-- **Content**: [Main introductory paragraph about the project]
-- **Image Desktop** (optional): `/assets/case-studies/[project-id]/intro-desktop.webp`
-- **Image Mobile** (optional): `/assets/case-studies/[project-id]/intro-mobile.webp`
-- **Image Alt**: [Descriptive alt text]
-- **Image Caption** (optional): [Caption text for context]
+- **Title**: About Ownright
+- **Content**: Ownright is a real estate law startup that provides legal closing services to buyers and sellers in Ontario. Customers pay a flat fee per transaction, and our revenue scales with the volume of deals we complete. I led design across Ownright’s digital products, with a focus on our internal platform used by legal and support staff.
 
-### 2. SplitText - Problem Statement  
-**Component**: `<SplitText>`
-- **Title**: [e.g., "The Challenge", "Problem"]
-- **Subtitle**: [Optional context]
-- **Content**: [Detailed problem description]
-
-### 3. SubList - Project Details
+### 2. SubList - Role and timeline
 **Component**: `<SubList>`
-- **Title**: [e.g., "Project Details"]
-- **Subtitle**: [Optional context]
+- **Title**: Role &amp; timeline
 - **Items**: 
-  - **Duration**: [e.g., "6 months"]
-  - **Team Size**: [e.g., "4 designers, 2 researchers"]
-  - **Platform**: [e.g., "Web and Mobile"]
-  - **Role**: [e.g., "Lead Product Designer"]
-  - **Tools**: [e.g., "Figma, Principle, Miro"]
+  - **Duration**: 2024 to 2025
+  - **Team Size**: Founder/PM, 4 engineers
+  - **Role**: Founding Product Designer
 
-### 4. SplitText - Solution Overview
+
+### 3. SplitText - Building Internal Tool
 **Component**: `<SplitText>`
-- **Title**: [e.g., "Our Approach", "Solution"]
-- **Subtitle**: [Optional]
-- **Content**: [High-level solution description]
-- **Image Desktop** (optional): `/assets/case-studies/[project-id]/solution-desktop.webp`
-- **Image Mobile** (optional): `/assets/case-studies/[project-id]/solution-mobile.webp`
-- **Image Alt**: [Descriptive alt text]
-- **Image Caption** (optional): [Solution context]
+- **Title**: Problem
+- **Subtitle**: Building our support tool from 0-to-1
+- **Content**: When I joined, the legal team was using a mix of a Retool-built dashboard, third-party legal tools and spreadsheets to manage deals. These inefficiencies limited how many deals each of our legal and support staff could handle per month. We decided to build our own internal legal support tool, which consolidated fragmented workflows into a single interface, and I led the design from the ground up for it. Our KPI for this project was to increase the number of closings per lawyer per month that our team could handle (capacity) in order to unlock growth.
+- **Image Desktop** (optional): `/assets/case-studies/ownright/ownright-matter-view-desktop.webp`
+- **Image Mobile** (optional): `/assets/case-studies/ownright/ownright-matter-view-mobile.webp`
+- **Image Alt**: An overview of a closing in our internal tool
+- **Image Caption** Internal manager for a client's home closing
 
-### 5. SplitWidthImages - Process/Design Exploration
+### 4. OutcomesGrid - Results/Metrics
+**Component**: `<OutcomesGrid>`
+- **Title**: Outcomes
+- **Subtitle**: How capacity unlocked revenue growth
+- **Outcomes**: 
+  - **Metric 1**: 
+    - **Number**: 140%
+    - **Caption**: Increase in closings per month per lawyer
+  - **Metric 2**: 
+    - **Number**: 320%
+    - **Caption**: Revenue growth, same period
+
+### 5. SplitWidthImages - dashboard/crm
 **Component**: `<SplitWidthImages>`
 - **Images**: 
   - **Image 1**: 
-    - **Desktop**: `/assets/case-studies/[project-id]/process-1-desktop.webp`
-    - **Mobile**: `/assets/case-studies/[project-id]/process-1-mobile.webp`
-    - **Alt**: [Process step description]
-    - **Caption**: [What this image shows]
+    - **Desktop**: `/assets/case-studies/ownright/ownright-dashboard-desktop.webp`
+    - **Mobile**: `/assets/case-studies/ownright/ownright-dashboard-mobile.webp`
+    - **Alt**: Centralized dashboard for all deals closing in a given day.
+    - **Caption**: Centralized dashboard for all deals closing in a given day.
   - **Image 2**: 
-    - **Desktop**: `/assets/case-studies/[project-id]/process-2-desktop.webp`
-    - **Mobile**: `/assets/case-studies/[project-id]/process-2-mobile.webp`
-    - **Alt**: [Process step description]
-    - **Caption**: [What this image shows]
+    - **Desktop**: `/assets/case-studies/ownright/ownright-crm-desktop.webp`
+    - **Mobile**: `/assets/case-studies/ownright/ownright-crm-mobile.webp`
+    - **Alt**: Bespoke CRM
+    - **Caption**: We built a bespoke CRM in our internal support tool to manage client and partner data.
   - [Add up to 4 images total]
 
-### 6. VideoEmbed - Demo/Prototype (Optional)
-**Component**: `<VideoEmbed>`
-- **Video**: `/assets/case-studies/[project-id]/demo.mp4` (16:9 aspect ratio, H.264, under 10MB)
-- **Poster**: `/assets/case-studies/[project-id]/demo-poster.webp`
-- **Alt**: [Video description]
-- **Caption**: [What the video demonstrates]
-- **Autoplay**: `false` (set to `true` for background videos)
-- **Muted**: `true`
-- **Loop**: `false`
 
-### 7. OutcomesGrid - Results/Metrics
-**Component**: `<OutcomesGrid>`
-- **Title**: [e.g., "Key Outcomes", "Results"]
-- **Subtitle**: [Optional context]
-- **Outcomes**: 
-  - **Metric 1**: 
-    - **Number**: [e.g., "1.2x", "60%", "32"]
-    - **Caption**: [e.g., "Increase in efficiency"]
-  - **Metric 2**: 
-    - **Number**: [e.g., "85%"]
-    - **Caption**: [e.g., "User satisfaction"]
-  - [Add up to 4 metrics total]
-
-### 8. SplitText - Learnings/Reflection
+### 5. SplitText - Trust Act
 **Component**: `<SplitText>`
-- **Title**: [e.g., "Key Learnings", "Reflection"]
-- **Subtitle**: [Optional]
-- **Content**: [What you learned, challenges overcome, next steps]
+- **Title**: Trust Accounting
+- **Content**: Trust accounting was one of the most painful workflows; fragmented across Closer, Cosmolex, and manual notes. It was time-consuming, error-prone, and often deprioritized behind active closings since it was completed after closings were completed. I worked closely with legal to design a dedicated trust accounting workflow inside our internal tool.
+- **Image Desktop** (optional): `/assets/case-studies/ownright/ownright-trust-act-desktop.webp`
+- **Image Mobile** (optional): `/assets/case-studies/ownright/ownright-trust-act-mobile.webp`
+- **Image Alt**: Trust accounting interface
 
-### 9. NextPrevProject - Navigation
+
+### 6. SplitText - Stucco
+**Component**: `<SplitText>`
+- **Title**: Design System
+- **Subtitle**: Building out our 'Stucco' design system
+- **Content**: As we scaled, I began building a shared design system, later formalized as Stucco. It covered component libraries, design tokens, and interaction patterns. I embedded our core design principles and heuristics into the system to align the team around best practices and the direction regarding how we wanted to shape our internal and external apps. Doing so helped increase alignment among the product team and, by extension, speed with which we could ship value to support.
+- **Image Desktop** (optional): `/assets/case-studies/ownright/ownright-design-sys-desktop.webp`
+- **Image Mobile** (optional): `/assets/case-studies/ownright/ownright-design-sys-mobile.webp`
+- **Image Alt**: Design system components and patterns
+- **Image Caption** Select component, pattern and principles from Stucco.
+
+
+### 7. SplitText - Research
+**Component**: `<SplitText>`
+- **Title**: Research
+- **Subtitle**: Initiating a research function
+- **Content**: We didn’t have the budget for formal research, so I built lightweight methods into our process. One of the early opportunities for further research regarded the lingering question of who our ideal client profile was. We didn’t have a lot of data to answer the question with beyond google reviews. I led an initiative to survey our past clients with targeted questions to help segment them into different behavioural patterns.
+- **Image Desktop** (optional): `/assets/case-studies/ownright/ownright-research-desktop.webp`
+- **Image Mobile** (optional): `/assets/case-studies/ownright/ownright-research-mobile.webp`
+- **Image Alt**: Excerpts from a persona research study
+
+
+
+### 8. NextPrevProject - Navigation
 **Component**: `<NextPrevProject>`
-- **Current Project**: `[project-id]` (same as Project ID above)
-
----
-
-## Image Specifications
-
-### File Naming Convention:
-- Hero: `hero-desktop.webp`, `hero-mobile.webp`
-- Content: `[section-name]-desktop.webp`, `[section-name]-mobile.webp`
-- Process: `process-[number]-desktop.webp`, `process-[number]-mobile.webp`
-
-### Image Dimensions:
-- **Desktop Images**: 1200px+ width, 16:9 or wider aspect ratio
-- **Mobile Images**: 800px+ width, 4:3 or taller aspect ratio
-- **Hero Images**: Desktop 1920x1080, Mobile 800x1000
-- **Process Images**: Desktop 1200x675, Mobile 800x1000
-
-### Technical Requirements:
-- **Format**: WebP for best compression
-- **Quality**: 80-90% quality setting
-- **File Size**: Keep under 500KB per image when possible
-- **Alt Text**: Always include descriptive alt text for accessibility
-
-### Video Specifications:
-- **Format**: MP4 (H.264 codec)
-- **Resolution**: 1920x1080 or 1280x720
-- **Aspect Ratio**: 16:9
-- **File Size**: Under 10MB
-- **Compression**: High quality, optimized for web
-- **Poster Image**: Same dimensions as video, WebP format
-
----
-
-## Content Guidelines
-
-### Writing Style:
-- **Concise**: Keep paragraphs focused and readable
-- **Story-driven**: Structure as problem → solution → outcome
-- **Specific**: Include concrete details, metrics, and examples
-- **Professional**: Maintain professional tone while being engaging
-
-### Content Length:
-- **Titles**: 2-8 words
-- **Subtitles**: 4-12 words  
-- **Content blocks**: 50-150 words (1-3 paragraphs)
-- **Captions**: 10-25 words
-- **Alt text**: 5-15 words, descriptive
-
-### Metrics/Outcomes:
-- Use specific numbers when possible
-- Include context for what the metrics mean
-- Focus on business impact and user value
-- Limit to 2-4 key metrics to avoid overwhelming
-
----
-
-## Implementation Checklist
-
-- [ ] Create folder: `/public/assets/case-studies/[project-id]/`
-- [ ] Export all images in desktop and mobile versions
-- [ ] Optimize images (WebP format, appropriate file sizes)
-- [ ] Write all content sections following the template
-- [ ] Create case study page: `/src/pages/[project-id].astro`
-- [ ] Import all required components
-- [ ] Set correct `currentProject` prop for NextPrevProject
-- [ ] Test responsive behavior on all screen sizes
-- [ ] Update homepage thumbnail link to point to new case study
-- [ ] Verify all images load correctly
-- [ ] Check that filtering works in NextPrevProject component
+- **Current Project**: `ownright` (same as Project ID above)
