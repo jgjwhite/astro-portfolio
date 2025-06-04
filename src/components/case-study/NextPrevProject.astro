@@ -1,0 +1,43 @@
+---
+interface Props {
+  currentProject: string;
+}
+
+const { currentProject } = Astro.props;
+
+const projects = [
+  { id: "ownright", title: "lululemon Wanderwell", route: "/lululemon" },
+  { id: "lululemon", title: "Workplace x Messenger Integration", route: "/messenger" },
+  { id: "messenger", title: "Workplace Bulletins", route: "/bulletins" },
+  { id: "bulletins", title: "Tread Polygonal Sites", route: "/tread" },
+  { id: "tread", title: "Internal legal app", route: "/ownright" }
+];
+
+const filteredProjects = projects.filter(project => project.id !== currentProject);
+---
+
+<div class="next-prev-projects max-w-[960px] mx-auto w-full">
+  <h2 class="text-h1-custom mb-9 text-center">More projects</h2>
+  <ul>
+    {filteredProjects.map((project, index) => (
+      <li class="project-link-item border-b border-gray-300 last:border-b-0">
+        <a href={project.route} class="text-h3 text-[#D00019] block py-8 sm:py-6">{project.title}</a>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<style>
+  .next-prev-projects {
+    width: 100%;
+  }
+  .project-link-item {
+    width: 100%;
+  }
+  @media (max-width: 640px) {
+    .project-link-item a {
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+</style> 

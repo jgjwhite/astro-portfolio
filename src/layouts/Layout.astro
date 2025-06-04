@@ -20,7 +20,7 @@ const { title, description = "Welcome to my portfolio" } = Astro.props;
     <meta name="description" content={description} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="bg-[#ece6e8] min-h-screen">
     <CustomCursor />
     <div class="mx-3 xl:mx-auto max-w-[1280px]">
       <slot />

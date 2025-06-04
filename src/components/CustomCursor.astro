@@ -11,28 +11,28 @@
   }
 
   .cursor-dot {
-    width: 4px;
-    height: 4px;
+    width: 12px;
+    height: 12px;
     background-color: black;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    transition: width 0.2s, height 0.2s;
+    z-index: 2;
   }
 
   .cursor-outline {
-    width: 40px;
-    height: 40px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    width: 12px;
+    height: 12px;
+    background-color: black;
     border-radius: 50%;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0.3);
-    transition: transform 0.2s, border-color 0.2s;
-    box-sizing: border-box;
+    transform: translate(-50%, -50%);
+    animation: pulse 3s infinite;
+    z-index: 1;
   }
 
   .cursor-hover .cursor-dot {
@@ -41,11 +41,27 @@
   }
 
   .cursor-hover .cursor-outline {
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(3.33);
     border-color: black;
     background: black;
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
+    animation: none;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(2.67);
+      opacity: 0.4;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
   }
 </style>
 

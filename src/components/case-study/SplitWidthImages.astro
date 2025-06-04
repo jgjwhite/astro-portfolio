@@ -1,0 +1,49 @@
+---
+export interface Image {
+  srcDesktop: string;
+  srcMobile: string;
+  alt: string;
+  caption?: string;
+}
+
+export interface Props {
+  images: Image[];
+}
+
+const { images } = Astro.props;
+---
+<div class="split-images-grid">
+  {images.map((img) => (
+    <figure>
+      <picture>
+        <source srcset={img.srcDesktop} media="(min-width: 640px)" />
+        <img src={img.srcMobile} alt={img.alt} class="split-image" loading="lazy" />
+      </picture>
+      {img.caption && (
+        <figcaption class="text-caption split-image-caption">{img.caption}</figcaption>
+      )}
+    </figure>
+  ))}
+</div>
+
+<style>
+  .split-images-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  @media (min-width: 640px) {
+    .split-images-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  .split-image {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+  }
+  .split-image-caption {
+    color: #838383;
+    margin-top: 4px;
+  }
+</style> 

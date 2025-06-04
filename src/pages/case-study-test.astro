@@ -1,69 +1,70 @@
 ---
 import CaseStudyLayout from '../layouts/CaseStudyLayout.astro';
-import Navbar from '../components/shared/Navbar.astro';
+import SplitText from '../components/case-study/SplitText.astro';
+import OutcomesGrid from '../components/case-study/OutcomesGrid.astro';
+import NextPrevProject from '../components/case-study/NextPrevProject.astro'; 
 ---
 
-<Navbar />
 <CaseStudyLayout 
   title="Designing a Complex Legal Workflow" 
   heroImage="/assets/thumbnails/Thumbnail-ownright.webp"
 >
-  <div class="mt-20">
-    <!-- Intro Section -->
-    <section class="mb-12 sm:mb-16 md:mb-24">
-      <p class="text-body-large max-w-[700px] mx-auto">
-        A case study exploring how we redesigned the internal legal workflow at Ownright Law, 
-        reducing processing time by 60% and improving team satisfaction.
-      </p>
-    </section>
+  <!-- Intro Section -->
+  <section class="mb-12 sm:mb-16 md:mb-24 max-w-[960px] mx-auto">
+    <p class="text-body-large mx-auto">
+      A case study exploring how we redesigned the internal legal workflow at Ownright Law, 
+      reducing processing time by 60% and improving team satisfaction.
+    </p>
+  </section>
 
-    <!-- Problem Section -->
-    <section class="mb-12 sm:mb-16 md:mb-24">
-      <h2 class="text-h2 mb-6">The Problem</h2>
-      <div class="text-body max-w-[700px]">
-        <p class="mb-4">
-          Legal teams were spending excessive time on routine document processing, 
-          leading to bottlenecks and increased error rates. The existing system lacked 
-          clear workflows and proper validation steps.
-        </p>
-      </div>
-    </section>
+  <!-- Problem Section -->
+  <section class="max-w-[960px] mx-auto" id="problem">
+    <SplitText
+      title="The Problem"
+      subtitle=""
+      content="Legal teams were spending excessive time on routine document processing, leading to bottlenecks and increased error rates. The existing system lacked clear workflows and proper validation steps."
+    />
+  </section>
 
-    <!-- Solution Section -->
-    <section class="mb-12 sm:mb-16 md:mb-24">
-      <h2 class="text-h2 mb-6">The Solution</h2>
-      <div class="text-body max-w-[700px]">
-        <p class="mb-4">
-          We designed a streamlined workflow that automated routine tasks while 
-          maintaining necessary human oversight. The new system included clear 
-          validation steps and real-time collaboration features.
-        </p>
-      </div>
-    </section>
+  <!-- Solution Section -->
+  <section class="mb-12 sm:mb-16 md:mb-24 max-w-[960px] mx-auto" id="solution">
+    <SplitText
+      title="The Solution"
+      subtitle=""
+      content="We designed a streamlined workflow that automated routine tasks while maintaining necessary human oversight. The new system included clear validation steps and real-time collaboration features."
+    />
+  </section>
 
-    <!-- Outcomes Section -->
-    <section class="mb-12 sm:mb-16 md:mb-24">
-      <h2 class="text-h2 mb-6">Key Outcomes</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-        <div class="text-center">
-          <p class="text-h3">60%</p>
-          <p class="text-caption">Faster Processing</p>
-        </div>
-        <div class="text-center">
-          <p class="text-h3">85%</p>
-          <p class="text-caption">Error Reduction</p>
-        </div>
-        <div class="text-center">
-          <p class="text-h3">4.8/5</p>
-          <p class="text-caption">Team Satisfaction</p>
-        </div>
-      </div>
-    </section>
-  </div>
+  <!-- Key Outcomes Section -->
+  <section class="mb-12 sm:mb-16 md:mb-24 max-w-[960px] mx-auto" id="outcomes">
+    <OutcomesGrid
+      title="Key Outcomes"
+      subtitle="The new system delivered significant improvements across key metrics"
+      outcomes={[
+        {
+          metricNumber: "1.2x",
+          metricCaption: "Faster document processing"
+        },
+        {
+          metricNumber: "32%",
+          metricCaption: "Reduction in errors"
+        },
+        {
+          metricNumber: "4.5",
+          metricCaption: "Hours saved per week"
+        },
+        {
+          metricNumber: "98%",
+          metricCaption: "User satisfaction"
+        }
+      ]}
+    />
+  </section>
 
   <!-- Next Project Section -->
-  <section slot="nextProject" class="text-center">
-    <p class="text-body mb-2">Next Project</p>
-    <h2 class="text-h2">Workplace x Messenger</h2>
+
+
+  <section class="mt-12 sm:mt-16 md:mt-24">
+    <NextPrevProject currentProject="ownright" />
   </section>
 </CaseStudyLayout> 

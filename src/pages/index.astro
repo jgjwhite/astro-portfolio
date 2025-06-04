@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 import Layout from '../layouts/Layout.astro';
-import Nav from '../components/Nav.astro';
+import Navbar from '../components/shared/Navbar.astro';
 import Thumbnail from '../components/Thumbnail.astro';
 ---
 
@@ -11,13 +11,20 @@ import Thumbnail from '../components/Thumbnail.astro';
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Justin White - Portfolio</title>
 	</head>
 	<body>
 		<Layout title="Justin White - Portfolio">
-			<Nav />
+			<Navbar />
 			<main>
-				<h1 class="mt-12 max-w-[800px] mx-auto text-center font-pangaia text-[1.25rem] leading-[1.55rem] md:text-[1.55rem] md:leading-[1.75rem] xl:text-[1.75rem] xl:leading-[1.95rem]">I'm a senior product designer specialized in designing for complex workflows. Previously designed for teams at meta, lululemon and ecobee.</h1>
+				<div class="mt-20 max-w-[700px] mx-auto text-center">
+					<h1 class="font-neuecorp font-normal text-[1.65rem] leading-[105%] md:text-[2.5rem] md:leading-[105%] xl:text-[3rem] xl:leading-[95%]">
+						Product Designer specialized in designing <span class="font-pangaia italic">complex workflows</span>
+					</h1>
+					<p class="mt-1 md:mt-4 text-gray-500 text-[14px] leading-[16px]">
+						Previously designed for teams at Meta, Lululemon and Ecobee.
+					</p>
+				</div>
 				<div class="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4">
 					<a href="/ownright" class="block text-black">
 						<Thumbnail imgSrc="/assets/thumbnails/Thumbnail-ownright.webp" alt="Ownright Thumbnail" projectName="Internal legal app" accentInfo="Ownright Law" />

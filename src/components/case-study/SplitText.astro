@@ -1,0 +1,52 @@
+---
+interface Props {
+  title?: string;
+  subtitle?: string;
+  content: string;
+  imageDesktop?: string;
+  imageMobile?: string;
+  imageAlt?: string;
+  imageCaption?: string;
+}
+const { title, subtitle, content, imageDesktop, imageMobile, imageAlt, imageCaption } = Astro.props;
+---
+
+<div class="split-text-component max-w-[960px] mx-auto">
+  <hr class="border-t border-gray-300 w-full" />
+  {imageDesktop && imageMobile && imageAlt && (
+    <div class="mt-6 mb-6">
+      <picture>
+        <source srcset={imageDesktop} media="(min-width: 641px)" />
+        <img src={imageMobile} alt={imageAlt} class="w-full h-auto rounded-[12px]" />
+      </picture>
+      {imageCaption && (
+        <div class="text-caption mt-1" style="color: #838383">{imageCaption}</div>
+      )}
+    </div>
+  )}
+  <div class="split-text-inner flex flex-col md:flex-row gap-6 md:gap-12">
+    <div class="md:w-1/2 w-full flex flex-col">
+      {title && <div class="text-h2 mb-1 md:mb-2">{title}</div>}
+      {subtitle && <div class="text-body" style="color: #838383">{subtitle}</div>}
+    </div>
+    <div class="md:w-1/2 w-full">
+      <div class="text-body">{content}</div>
+    </div>
+  </div>
+</div>
+
+<style>
+.split-text-component hr {
+  margin-bottom: 24px;
+}
+@media (max-width: 640px) {
+  .split-text-inner .text-h2 {
+    margin-bottom: 4px !important;
+  }
+}
+@media (min-width: 641px) {
+  .split-text-inner .text-h2 {
+    margin-bottom: 8px !important;
+  }
+}
+</style> 

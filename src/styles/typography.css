@@ -47,6 +47,21 @@
   letter-spacing: 0;
 }
 
+.text-metric {
+  font-family: 'PP Neuecorp', sans-serif;
+  font-size: 72px;
+  line-height: 1;
+  font-weight: normal;
+}
+
+.text-h1-custom {
+  font-family: 'PP Pangaia', serif;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 105%;
+  letter-spacing: 0;
+}
+
 /* Tablet breakpoint (768px) */
 @media (max-width: 768px) {
   .text-h1 {
@@ -63,6 +78,14 @@
   
   .text-caption {
     font-size: 13px;
+  }
+  
+  .text-metric {
+    font-size: 56px;
+  }
+  
+  .text-h1-custom {
+    font-size: 36px;
   }
 }
 
@@ -90,5 +113,13 @@
   
   .text-caption {
     font-size: 12px;
+  }
+  
+  .text-metric {
+    font-size: 48px;
+  }
+  
+  .text-h1-custom {
+    font-size: 24px;
   }
 } 
