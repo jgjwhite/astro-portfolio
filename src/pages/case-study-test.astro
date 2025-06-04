@@ -2,7 +2,9 @@
 import CaseStudyLayout from '../layouts/CaseStudyLayout.astro';
 import SplitText from '../components/case-study/SplitText.astro';
 import OutcomesGrid from '../components/case-study/OutcomesGrid.astro';
-import NextPrevProject from '../components/case-study/NextPrevProject.astro'; 
+import NextPrevProject from '../components/case-study/NextPrevProject.astro';
+import VideoEmbed from '../components/case-study/VideoEmbed.astro';
+import SplitWidthImages from '../components/case-study/SplitWidthImages.astro';
 ---
 
 <CaseStudyLayout 
@@ -32,6 +34,40 @@ import NextPrevProject from '../components/case-study/NextPrevProject.astro';
       title="The Solution"
       subtitle=""
       content="We designed a streamlined workflow that automated routine tasks while maintaining necessary human oversight. The new system included clear validation steps and real-time collaboration features."
+      imageDesktop="/assets/test/test-solution-desktop.webp"
+      imageMobile="/assets/test/test-solution-mobile.webp"
+      imageAlt="Screenshot of the new legal workflow interface"
+      imageCaption="The redesigned document processing workflow with validation steps"
+    />
+  </section>
+
+  <!-- Process Images Section -->
+  <section class="mb-12 sm:mb-16 md:mb-24 max-w-[960px] mx-auto">
+    <SplitWidthImages
+      images={[
+        {
+          srcDesktop: "/assets/test/test-solution-desktop.webp",
+          srcMobile: "/assets/test/test-solution-mobile.webp",
+          alt: "Initial workflow design exploration",
+          caption: "Early wireframes showing the document processing flow"
+        },
+        {
+          srcDesktop: "/assets/test/test-solution-desktop.webp",
+          srcMobile: "/assets/test/test-solution-mobile.webp",
+          alt: "Final workflow implementation",
+          caption: "The completed workflow with validation steps"
+        }
+      ]}
+    />
+  </section>
+
+  <!-- Video Demo Section -->
+  <section class="mb-12 sm:mb-16 md:mb-24 max-w-[960px] mx-auto">
+    <VideoEmbed
+      src="/assets/test/test-video-loop.mp4"
+      poster="/assets/test/test-poster-img.webp"
+      alt="Demo of the new legal workflow system"
+      caption="A walkthrough of the streamlined document processing workflow"
     />
   </section>
 
@@ -62,8 +98,6 @@ import NextPrevProject from '../components/case-study/NextPrevProject.astro';
   </section>
 
   <!-- Next Project Section -->
-
-
   <section class="mt-12 sm:mt-16 md:mt-24">
     <NextPrevProject currentProject="ownright" />
   </section>

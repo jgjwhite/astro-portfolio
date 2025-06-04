@@ -12,6 +12,7 @@ export interface Props {
 
 const { images } = Astro.props;
 ---
+
 <div class="split-images-grid">
   {images.map((img) => (
     <figure>
@@ -20,7 +21,7 @@ const { images } = Astro.props;
         <img src={img.srcMobile} alt={img.alt} class="split-image" loading="lazy" />
       </picture>
       {img.caption && (
-        <figcaption class="text-caption split-image-caption">{img.caption}</figcaption>
+        <figcaption class="text-caption mt-3" style="color: #838383">{img.caption}</figcaption>
       )}
     </figure>
   ))}
@@ -41,9 +42,5 @@ const { images } = Astro.props;
     width: 100%;
     border-radius: 12px;
     display: block;
-  }
-  .split-image-caption {
-    color: #838383;
-    margin-top: 4px;
   }
 </style> 

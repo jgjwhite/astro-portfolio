@@ -1,0 +1,52 @@
+---
+interface Props {
+  src: string;
+  poster: string;
+  alt: string;
+  caption?: string;
+  autoplay?: boolean;
+  muted?: boolean;
+  loop?: boolean;
+}
+
+const { 
+  src, 
+  poster, 
+  alt, 
+  caption, 
+  autoplay = true, 
+  muted = true, 
+  loop = true 
+} = Astro.props;
+---
+
+<div class="video-embed">
+  <video
+    src={src}
+    poster={poster}
+    class="w-full rounded-[12px]"
+    preload="metadata"
+    {autoplay}
+    {muted}
+    {loop}
+    controls={!autoplay}
+  >
+    <source src={src} type="video/mp4" />
+    {alt}
+  </video>
+  {caption && (
+    <div class="text-caption mt-4" style="color: #838383">
+      {caption}
+    </div>
+  )}
+</div>
+
+<style>
+  .video-embed {
+    width: 100%;
+  }
+  .video-embed video {
+    aspect-ratio: 16/9;
+    object-fit: cover;
+  }
+</style> 
