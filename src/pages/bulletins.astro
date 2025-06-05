@@ -1,0 +1,55 @@
+---
+import CaseStudyLayout from '../layouts/CaseStudyLayout.astro';
+import SplitText from '../components/case-study/SplitText.astro';
+import MultiFullWidthImages from '../components/case-study/MultiFullWidthImages.astro';
+import NextPrevProject from '../components/case-study/NextPrevProject.astro';
+---
+
+<CaseStudyLayout
+  title="Workplace Bulletins"
+  heroImageDesktop="/assets/case-studies/bulletins/bulletins-hero-desktop.webp"
+  heroImageMobile="/assets/case-studies/bulletins/bulletins-hero-mobile.webp"
+  heroIntroTitle="Introduction"
+  heroIntroContent="While Workplace had strong adoption among communication teams, end user adoption often fell below 30% as employees preferred working in tools like Slack and MS Teams, causing them to miss important company updates. Communication teams needed a centralized way to curate and share Workplace content across these integrated platforms. "
+>
+
+
+  <section class="mb-12 sm:mb-16 md:mb-24 max-w-[960px] mx-auto">
+    <SplitText
+      title="Solution"
+      subtitle="Centralizing content distribution"
+      content="We built Workplace Bulletins, a tool that allows communication teams to curate content on Workplace and then organize and distribute it across integrated platforms—including digital signage in office spaces—all from one unified interface. The goal was to increase how frequently communication leaders shared content with their employee base, ultimately boosting viewership and engagement with company updates."
+      imageDesktop="/assets/case-studies/bulletins/bulletins-integrations-desktop.webp"
+      imageMobile="/assets/case-studies/bulletins/bulletins-integrations-mobile.webp"
+      imageAlt="Bulletins integrations"
+    />
+  </section>
+
+
+  <section class="mb-12 sm:mb-16 md:mb-24 max-w-[960px] mx-auto">
+    <MultiFullWidthImages
+      images={[
+        {
+          srcDesktop: "/assets/case-studies/bulletins/bulletins-concepts-desktop.webp",
+          srcMobile: "/assets/case-studies/bulletins/bulletins-concepts-mobile.webp",
+          alt: "Early tests of the bulletins dashboard",
+          caption: "An initial concept of what the Bulletins (Collections, originally) dashboard might look like."
+        },
+        {
+          srcDesktop: "/assets/case-studies/bulletins/bulletins-admin-desktop.webp",
+          srcMobile: "/assets/case-studies/bulletins/bulletins-admin-mobile.webp",
+          alt: "Comms admins dasboard",
+          caption: "Org comms teams could control access, permissions from the admin panel."
+        },
+        {
+          srcDesktop: "/assets/case-studies/bulletins/bulletins-signage-desktop.webp",
+          srcMobile: "/assets/case-studies/bulletins/bulletins-signage-mobile.webp",
+          alt: "Displaying Workplace on Signage.",
+          caption: "We integrated Bulletins with AppSpace to enable companies to display their Workplace posts on digital signage in offices, factories, etc."
+        }
+      ]}
+    />
+  </section>
+
+  <NextPrevProject currentProject="bulletins" />
+</CaseStudyLayout> 

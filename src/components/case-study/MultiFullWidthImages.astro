@@ -1,0 +1,32 @@
+---
+interface Props {
+  images: Array<{
+    srcDesktop: string;
+    srcMobile: string;
+    alt: string;
+    caption?: string;
+  }>;
+}
+
+const { images } = Astro.props;
+---
+
+<div class="max-w-[960px] mx-auto">
+  {images.map((image) => (
+    <div class="[&:not(:last-child)]:mb-8">
+      <picture>
+        <source media="(min-width: 641px)" srcset={image.srcDesktop} />
+        <img
+          src={image.srcMobile}
+          alt={image.alt}
+          class="w-full h-auto rounded-[12px]"
+        />
+      </picture>
+      {image.caption && (
+        <p class="text-caption mt-1" style="color: #838383">
+          {image.caption}
+        </p>
+      )}
+    </div>
+  ))}
+</div> 

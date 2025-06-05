@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import '../styles/fonts.css';
 import CustomCursor from '../components/CustomCursor.astro';
+import Footer from '../components/shared/Footer.astro';
 
 interface Props {
   title: string;
@@ -11,7 +12,7 @@ interface Props {
 const { title, description = "Welcome to my portfolio" } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" class="bg-[#ece6e8]">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -22,8 +23,9 @@ const { title, description = "Welcome to my portfolio" } = Astro.props;
   </head>
   <body class="bg-[#ece6e8] min-h-screen">
     <CustomCursor />
-    <div class="mx-3 xl:mx-auto max-w-[1280px]">
+    <div id="main-content-container" class="relative bg-[#ece6e8] mx-3 xl:mx-auto max-w-[1280px] transition-transform duration-500 ease-in-out">
       <slot />
     </div>
+    <Footer />
   </body>
 </html> 

@@ -1,0 +1,106 @@
+---
+import CaseStudyLayout from '../layouts/CaseStudyLayout.astro';
+import SplitText from '../components/case-study/SplitText.astro';
+import SubList from '../components/case-study/SubList.astro';
+import SplitWidthImages from '../components/case-study/SplitWidthImages.astro';
+import MultiFullWidthImages from '../components/case-study/MultiFullWidthImages.astro';
+import NextPrevProject from '../components/case-study/NextPrevProject.astro';
+---
+
+<CaseStudyLayout
+  title="lululemon Wanderwell"
+  heroImageDesktop="/assets/case-studies/lululemon/lululemon-hero-desktop.webp"
+  heroImageMobile="/assets/case-studies/lululemon/lululemon-hero-mobile.webp"
+  heroIntroTitle="Project Context"
+  heroIntroContent="In lululemon's earliest stores, they often had physical cork boards in their stores that guests would use to post events and sign up to events. lululemon Wanderwell is a visionary concept that functions as a guest's digitized, personalized community wellness events cork board.  I worked across both my Thoughtworks product team and lululemon's Digital and Omni Futures team in developing the concept."
+>
+  <section class="mb-12 sm:mb-16 md:mb-24 max-w-[960px] mx-auto">
+    <SubList
+      title="Role &amp; Timeline"
+      items={[
+        { label: "Duration", value: "Fall, 2023" },
+        { label: "Team", value: "PM, Research and 2 Engineers" },
+        { label: "Role", value: "Product design and strategy" },
+      ]}
+    />
+  </section>
+
+  <section class="mb-12 sm:mb-16 md:mb-24 max-w-[960px] mx-auto">
+    <SplitText
+      title="Business problem"
+      subtitle="Engaging between purchases"
+      content="The business outcome we were focused on was how to increase a guests lifetime value. Guests would often use the lululemon app to purchase products, and in-between purchases they wouldn't engage with the app whatsoever. lululemon wanted to explore opportunities to re-engage guests in between their purchases."
+    />
+  </section>
+
+  <section class="mb-12 sm:mb-16 md:mb-24 max-w-[960px] mx-auto">
+    <SplitText
+      title="Concept Validation"
+      content="Our team\'s goal was to take a handful of concept spaces that lululemon had garnered signal around through past studies, e.g., a secret lululemon club, and a map of wellness activities in your area... and arrive at one, validated concept prototype that we could then beta test in key markets."
+      imageDesktop="/assets/case-studies/lululemon/lululemon-sketches-desktop.webp"
+      imageMobile="/assets/case-studies/lululemon/lululemon-sketches-mobile.webp"
+      imageAlt="Early sketches used as visual stimuli during research"
+    />
+  </section>
+
+  <section class="mb-12 sm:mb-16 md:mb-24 max-w-[960px] mx-auto">
+    <SplitText
+      title="Research"
+      content="Our team structured our research into 3 iterative sprints. We started broad with a generative, low-fidelity sprint, and then used insights from each sprint to persevere, pivot or park key features of each of the concepts. In total, our research included 50 participants, primarily via methods like user interviews, surveys and in-person wizard of oz testing."
+      imageDesktop="/assets/case-studies/lululemon/lululemon-profiles-desktop.webp"
+      imageMobile="/assets/case-studies/lululemon/lululemon-profiles-mobile.webp"
+      imageAlt="Concept explorations for personalized sweat profile pages"
+    />
+  </section>
+
+  <section class="mb-12 sm:mb-16 md:mb-24 max-w-[960px] mx-auto">
+    <SplitWidthImages
+      images={[
+        {
+          srcDesktop: "/assets/case-studies/lululemon/lululemon-research-desktop.webp",
+          srcMobile: "/assets/case-studies/lululemon/lululemon-research-mobile.webp",
+          alt: "Images from in-person research round",
+          caption: "Shots from our in-person research round."
+        },
+        {
+          srcDesktop: "/assets/case-studies/lululemon/lululemon-survey-desktop.webp",
+          srcMobile: "/assets/case-studies/lululemon/lululemon-survey-mobile.webp",
+          alt: "Survey results graph",
+          caption: "Excerpt from an early survey of the concept spaces."
+        }
+      ]}
+    />
+  </section>
+
+  <section class="mb-12 sm:mb-16 md:mb-24 max-w-[960px] mx-auto">
+    <SplitText
+      title="Outcomes"
+      subtitle="Beta testing in key markets"
+      content="Our Wanderwell prototype was built and shipped as a beta test to major U.S. markets, including Miami and New York. The success metric we used for the beta test was to benchmark Wanderwell against the current Classes feature in the lululemon app, which guests interacted with ~2-5% of the time. If we could show that Wanderwell was being engaged with significantly more often than Classes, then lululemon would consider replacing it with Wanderwell."
+      imageDesktop="/assets/case-studies/lululemon/lululemon-align-desktop.webp"
+      imageMobile="/assets/case-studies/lululemon/lululemon-align-mobile.webp"
+      imageAlt="Concept explorations for personalized sweat profile pages"
+    />
+  </section>
+
+  <section class="mb-12 sm:mb-16 md:mb-24 max-w-[960px] mx-auto">
+    <MultiFullWidthImages
+      images={[
+        {
+          srcDesktop: "/assets/case-studies/lululemon/lululemon-pulse-check-desktop.webp",
+          srcMobile: "/assets/case-studies/lululemon/lululemon-pulse-check-mobile.webp",
+          alt: "Daily pulse interaction",
+          caption: "We secured a patent for the daily pulse interaction, which was designed to engage guests and collect data on their preferences."
+        },
+        {
+          srcDesktop: "/assets/case-studies/lululemon/lululemon-categories-desktop.webp",
+          srcMobile: "/assets/case-studies/lululemon/lululemon-categories-mobile.webp",
+          alt: "Wanderwell curated categories",
+          caption: "Personalized categories, curated by lululemon ambassadors, was scoped in for the beta test."
+        }
+      ]}
+    />
+  </section>
+
+  <NextPrevProject currentProject="lululemon" />
+</CaseStudyLayout> 

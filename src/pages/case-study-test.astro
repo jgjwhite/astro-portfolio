@@ -5,6 +5,7 @@ import OutcomesGrid from '../components/case-study/OutcomesGrid.astro';
 import NextPrevProject from '../components/case-study/NextPrevProject.astro';
 import VideoEmbed from '../components/case-study/VideoEmbed.astro';
 import SplitWidthImages from '../components/case-study/SplitWidthImages.astro';
+import MultiFullWidthImages from '../components/case-study/MultiFullWidthImages.astro';
 ---
 
 <CaseStudyLayout 
@@ -93,6 +94,32 @@ import SplitWidthImages from '../components/case-study/SplitWidthImages.astro';
         {
           metricNumber: "98%",
           metricCaption: "User satisfaction"
+        }
+      ]}
+    />
+  </section>
+
+  <!-- Multi Full Width Images Section -->
+  <section class="mb-12 sm:mb-16 md:mb-24 max-w-[960px] mx-auto">
+    <MultiFullWidthImages
+      images={[
+        {
+          srcDesktop: "public/assets/case-studies/lululemon/lululemon-align-desktop.webp",
+          srcMobile: "public/assets/case-studies/lululemon/lululemon-align-mobile.webp",
+          alt: "Lululemon Align collection showcase",
+          caption: "The Align collection features our most popular yoga pants with buttery-soft fabric"
+        },
+        {
+          srcDesktop: "public/assets/case-studies/lululemon/lululemon-categories-desktop.webp",
+          srcMobile: "public/assets/case-studies/lululemon/lululemon-categories-mobile.webp",
+          alt: "Lululemon product categories",
+          caption: "Browse through our carefully curated product categories"
+        },
+        {
+          srcDesktop: "public/assets/case-studies/lululemon/lululemon-hero-desktop.webp",
+          srcMobile: "public/assets/case-studies/lululemon/lululemon-hero-mobile.webp",
+          alt: "Lululemon hero image",
+          caption: "Experience the perfect blend of style and performance"
         }
       ]}
     />

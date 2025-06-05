@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/shared/Navbar.astro';
 import Thumbnail from '../components/Thumbnail.astro';
+import AboutSection from '../components/AboutSection.astro';
 ---
 
 <html lang="en">
@@ -25,7 +26,7 @@ import Thumbnail from '../components/Thumbnail.astro';
 						Previously designed for teams at Meta, Lululemon and Ecobee.
 					</p>
 				</div>
-				<div class="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4">
+				<div class="mt-12 mb-24 sm:mb-32 md:mb-48 grid grid-cols-1 sm:grid-cols-2 gap-4">
 					<a href="/ownright" class="block text-black">
 						<Thumbnail imgSrc="/assets/thumbnails/Thumbnail-ownright.webp" alt="Ownright Thumbnail" projectName="Internal legal app" accentInfo="Ownright Law" />
 					</a>
@@ -39,6 +40,10 @@ import Thumbnail from '../components/Thumbnail.astro';
 						<Thumbnail imgSrc="/assets/thumbnails/Thumbnail-bulletins.webp" alt="Bulletins Thumbnail" projectName="Workplace Bulletins" accentInfo="Meta" />
 					</a>
 				</div>
+				<AboutSection
+					title="About"
+					content="Senior Product Designer with 7 years of experience across startups, big tech, and agencies. A consistent theme throughout my career has been designing for how people get work done more effectively and more enjoyably. <br /><br />I transitioned into design through the YSDN program, where I completed a degree in design. Since then, I've worked in proptech and construction tech startups, and at an agency where I led design on contracts for Meta and Lululemon. These days, I spend a lot of time thinking about how to better design, test, and measure whether software truly meets, and exceeds, customer needs."
+				/>
 			</main>
 		</Layout>
 	</body>

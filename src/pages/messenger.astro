@@ -1,0 +1,104 @@
+---
+import CaseStudyLayout from '../layouts/CaseStudyLayout.astro';
+import SplitText from '../components/case-study/SplitText.astro';
+import SubList from '../components/case-study/SubList.astro';
+import SplitWidthImages from '../components/case-study/SplitWidthImages.astro';
+import OutcomesGrid from '../components/case-study/OutcomesGrid.astro';
+import NextPrevProject from '../components/case-study/NextPrevProject.astro';
+---
+
+<CaseStudyLayout
+  title="Workplace x Messenger Integration"
+  heroImageDesktop="/assets/case-studies/messenger/messenger-hero-desktop.webp"
+  heroImageMobile="/assets/case-studies/messenger/messenger-hero-mobile.webp"
+  heroIntroTitle="Workplace from Meta"
+  heroIntroContent="Workplace from Meta was an all-in-one organizational communication app built by Meta that combined chat, video, groups and intranet with the work tools that teams already use. Workplace had 7 million users globally, and was a direct competitor with Microsoft Teams. While with Workplace, I led the design for the Integrations team. The team's mission was to amplify organization communication across third party work tools that connected to Workplace like Slack, Zoom and Workday."
+>
+  <section class="mb-12 sm:mb-16 md:mb-24 max-w-[960px] mx-auto">
+    <SubList
+      title="Role &amp; Timeline"
+      items={[
+        { label: "Duration", value: "January to March, 2022" },
+        { label: "Team", value: "PM, Content Designer, Marketing lead and 6 Engineers" },
+        { label: "Role", value: "Product design, research and execution" },
+      ]}
+    />
+  </section>
+
+  <section class="mb-12 sm:mb-16 md:mb-24 max-w-[960px] mx-auto">
+    <SplitText
+      title="Problem"
+      subtitle="Disconnected frontline staff"
+      content="Many of Workplace's customers were large organizations with frontline staff, e.g., Walmart and McDonald's. Frontline workers did not usually have work emails, and therefore could not register on Workplace to receive company updates. Communication leaders posted important news to Workplace, but frontline workers did not see it."
+    />
+  </section>
+
+  <section class="mb-12 sm:mb-16 md:mb-24 max-w-[960px] mx-auto">
+    <SplitText
+      title="Objectives"
+      content="In markets like Brazil, 40% of frontline workers were already using Facebook Messenger informally to receive work updates. By integrating Workplace with Messenger, we could help communication leaders reach more frontline staff. Our goal was to increase frontline worker engagement with Workplace posts through this integration."
+      imageDesktop="/assets/case-studies/messenger/messenger-samples-desktop.webp"
+      imageMobile="/assets/case-studies/messenger/messenger-samples-mobile.webp"
+      imageAlt="Workplace in Messenger samples"
+    />
+  </section>
+
+  <section class="mb-12 sm:mb-16 md:mb-24 max-w-[960px] mx-auto">
+    <SplitText
+      title="Solution"
+      subtitle="Enabling sharing to Messenger"
+      content="We built an integration between Workplace and Messenger, so that it was easy for frontline workers to link their personal Messenger accounts to Workplace, and it was easy for managers to share content with their frontline workers from Workplace to Messenger."
+      imageDesktop="/assets/case-studies/messenger/messenger-solution-desktop.webp"
+      imageMobile="/assets/case-studies/messenger/messenger-solution-mobile.webp"
+      imageAlt="Sharing content to Messenger from Workplace"
+    />
+  </section>
+
+
+
+
+ <section class="mb-12 sm:mb-16 md:mb-24 max-w-[960px] mx-auto">
+    <OutcomesGrid
+      title="Outcomes"
+      subtitle="Impact across Meta &amp; Thoughtworks"
+      outcomes={[
+        { metricNumber: "5%", metricCaption: "Increase in frontline engagement on Workplace posts" },
+        { metricNumber: "2+", metricCaption: "Contracts landed with Workplace, Messenger as a result of our team's work" }
+      ]}
+    />
+  </section>
+
+
+  <section class="mb-12 sm:mb-16 md:mb-24 max-w-[960px] mx-auto">
+    <SplitText
+      title="Process Highlights"
+      content="Early in the process, I worked closely with our meta PM to plan and lead a 2-day design workshop. We chose a How Might We workshop structure because of the outcomes we wanted, and put together the workshop outline, board and organized the lightning talks."
+      imageDesktop="/assets/case-studies/messenger/messenger-workshop-desktop.webp"
+      imageMobile="/assets/case-studies/messenger/messenger-workshop-mobile.webp"
+      imageAlt="How might we workshop"
+    />
+  </section>
+
+  <section class="mb-12 sm:mb-16 md:mb-24 max-w-[960px] mx-auto">
+    <SplitWidthImages
+      images={[
+        {
+          srcDesktop: "/assets/case-studies/messenger/messenger-modelling-desktop.webp",
+          srcMobile: "/assets/case-studies/messenger/messenger-modelling-mobile.webp",
+          alt: "Business process modelling",
+          caption: "We mapped how IT admins, frontline managers and frontline staff would interact across each surface."
+        },
+        {
+          srcDesktop: "/assets/case-studies/messenger/messenger-xma-desktop.webp",
+          srcMobile: "/assets/case-studies/messenger/messenger-xma-mobile.webp",
+          alt: "Collaborating with messenger",
+          caption: "I collaborated with designers from the Messenger team on what components best suited each use case."
+        }
+      ]}
+    />
+  </section>
+
+ 
+
+  <NextPrevProject currentProject="messenger" />
+</CaseStudyLayout> 
