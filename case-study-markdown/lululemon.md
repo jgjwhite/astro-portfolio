@@ -1,151 +1,44 @@
 # Case Study Content Template
 
 ## Basic Page Information
-- **Project ID**: `[ownright|lululemon|messenger|bulletins|tread]` (for NextPrevProject filtering)
-- **Page Title**: [Project Name - Case Study Title]
-- **Hero Image Desktop**: `/assets/case-studies/[project-id]/hero-desktop.webp` (16:9 or wider aspect ratio)
-- **Hero Image Mobile**: `/assets/case-studies/[project-id]/hero-mobile.webp` (4:3 or taller aspect ratio)
+- **Project ID**: `lululemon` (for NextPrevProject filtering)
+- **Page Title**: lululemon Wanderwell
+- **Hero Image Desktop**: `/assets/case-studies/lululemon/lululemon-hero-desktop.webp` 
+- **Hero Image Mobile**: `/assets/case-studies/lululemon/lululemon-hero-mobile.webp` 
+- **Hero Title**: Project Context
+- **Hero Content**: In lululemon’s earliest stores, they often had physical cork boards in their stores that guests would use to post events and sign up to events. lululemon Wanderwell is a visionary concept that functions as a guest’s digitized, personalized community wellness events cork board.  I worked across both my Thoughtworks product team and lululemon’s Digital and Omni Futures team in developing the concept. 
 
 ---
 
 ## Content Sections (Use Components Below)
 
-### 1. SplitText - Project Introduction
-**Component**: `<SplitText>`
-- **Title**: [Section title - e.g., "Overview"]
-- **Subtitle**: [Optional subtitle in gray]
-- **Content**: [Main introductory paragraph about the project]
-- **Image Desktop** (optional): `/assets/case-studies/[project-id]/intro-desktop.webp`
-- **Image Mobile** (optional): `/assets/case-studies/[project-id]/intro-mobile.webp`
-- **Image Alt**: [Descriptive alt text]
-- **Image Caption** (optional): [Caption text for context]
-
-### 2. SplitText - Problem Statement  
-**Component**: `<SplitText>`
-- **Title**: [e.g., "The Challenge", "Problem"]
-- **Subtitle**: [Optional context]
-- **Content**: [Detailed problem description]
-
-### 3. SubList - Project Details
+### 1. SubList - Project Details
 **Component**: `<SubList>`
-- **Title**: [e.g., "Project Details"]
-- **Subtitle**: [Optional context]
+- **Title**: Role &amp; Timeline
 - **Items**: 
-  - **Duration**: [e.g., "6 months"]
-  - **Team Size**: [e.g., "4 designers, 2 researchers"]
-  - **Platform**: [e.g., "Web and Mobile"]
-  - **Role**: [e.g., "Lead Product Designer"]
-  - **Tools**: [e.g., "Figma, Principle, Miro"]
+  - **Duration**: Fall, 2023
+  - **Team Size**: 1 PM, 1 Researcher and 2 Engineers
+  - **Role**: Product design and strategy
 
-### 4. SplitText - Solution Overview
+
+### 2. SplitText - Business context
 **Component**: `<SplitText>`
-- **Title**: [e.g., "Our Approach", "Solution"]
-- **Subtitle**: [Optional]
-- **Content**: [High-level solution description]
-- **Image Desktop** (optional): `/assets/case-studies/[project-id]/solution-desktop.webp`
-- **Image Mobile** (optional): `/assets/case-studies/[project-id]/solution-mobile.webp`
-- **Image Alt**: [Descriptive alt text]
-- **Image Caption** (optional): [Solution context]
+- **Title**: Business problem
+- **Subtitle**: Engaging between purchases
+- **Content**: The business outcome we were focused on was how to increase a guest’s lifetime value. Guest’s would often use the lululemon app to purchase products, and in-between purchases they wouldn't engage with the app whatsoever. lululemon wanted to explore opportunities to re-engage guests in between their purchases.
 
-### 5. SplitWidthImages - Process/Design Exploration
-**Component**: `<SplitWidthImages>`
-- **Images**: 
-  - **Image 1**: 
-    - **Desktop**: `/assets/case-studies/[project-id]/process-1-desktop.webp`
-    - **Mobile**: `/assets/case-studies/[project-id]/process-1-mobile.webp`
-    - **Alt**: [Process step description]
-    - **Caption**: [What this image shows]
-  - **Image 2**: 
-    - **Desktop**: `/assets/case-studies/[project-id]/process-2-desktop.webp`
-    - **Mobile**: `/assets/case-studies/[project-id]/process-2-mobile.webp`
-    - **Alt**: [Process step description]
-    - **Caption**: [What this image shows]
-  - [Add up to 4 images total]
 
-### 6. VideoEmbed - Demo/Prototype (Optional)
-**Component**: `<VideoEmbed>`
-- **Video**: `/assets/case-studies/[project-id]/demo.mp4` (16:9 aspect ratio, H.264, under 10MB)
-- **Poster**: `/assets/case-studies/[project-id]/demo-poster.webp`
-- **Alt**: [Video description]
-- **Caption**: [What the video demonstrates]
-- **Autoplay**: `false` (set to `true` for background videos)
-- **Muted**: `true`
-- **Loop**: `false`
-
-### 7. OutcomesGrid - Results/Metrics
-**Component**: `<OutcomesGrid>`
-- **Title**: [e.g., "Key Outcomes", "Results"]
-- **Subtitle**: [Optional context]
-- **Outcomes**: 
-  - **Metric 1**: 
-    - **Number**: [e.g., "1.2x", "60%", "32"]
-    - **Caption**: [e.g., "Increase in efficiency"]
-  - **Metric 2**: 
-    - **Number**: [e.g., "85%"]
-    - **Caption**: [e.g., "User satisfaction"]
-  - [Add up to 4 metrics total]
-
-### 8. SplitText - Learnings/Reflection
+### 3. SplitText - Engagement objective
 **Component**: `<SplitText>`
-- **Title**: [e.g., "Key Learnings", "Reflection"]
-- **Subtitle**: [Optional]
-- **Content**: [What you learned, challenges overcome, next steps]
+- **Title**: Concept Validation
+- **Content**: Our team’s goal was to take a handful of concept spaces that lululemon had garnered signal around through past studies, e.g., “a secret, exclusive lululemon club,” and “a map of wellness activities in your area,” and arrive at one, validated concept prototype that we could then beta test in key markets.
+- **Image Desktop** : `/assets/case-studies/lululemon/lululemon-sketches-desktop.webp`
+- **Image Mobile** : `/assets/case-studies/lululemon/lululemon-sketches-mobile.webp`
+- **Image Alt**: Early sketches used as visual stimuli during research
 
-### 9. NextPrevProject - Navigation
-**Component**: `<NextPrevProject>`
-- **Current Project**: `[project-id]` (same as Project ID above)
 
----
 
-## Image Specifications
 
-### File Naming Convention:
-- Hero: `hero-desktop.webp`, `hero-mobile.webp`
-- Content: `[section-name]-desktop.webp`, `[section-name]-mobile.webp`
-- Process: `process-[number]-desktop.webp`, `process-[number]-mobile.webp`
-
-### Image Dimensions:
-- **Desktop Images**: 1200px+ width, 16:9 or wider aspect ratio
-- **Mobile Images**: 800px+ width, 4:3 or taller aspect ratio
-- **Hero Images**: Desktop 1920x1080, Mobile 800x1000
-- **Process Images**: Desktop 1200x675, Mobile 800x1000
-
-### Technical Requirements:
-- **Format**: WebP for best compression
-- **Quality**: 80-90% quality setting
-- **File Size**: Keep under 500KB per image when possible
-- **Alt Text**: Always include descriptive alt text for accessibility
-
-### Video Specifications:
-- **Format**: MP4 (H.264 codec)
-- **Resolution**: 1920x1080 or 1280x720
-- **Aspect Ratio**: 16:9
-- **File Size**: Under 10MB
-- **Compression**: High quality, optimized for web
-- **Poster Image**: Same dimensions as video, WebP format
-
----
-
-## Content Guidelines
-
-### Writing Style:
-- **Concise**: Keep paragraphs focused and readable
-- **Story-driven**: Structure as problem → solution → outcome
-- **Specific**: Include concrete details, metrics, and examples
-- **Professional**: Maintain professional tone while being engaging
-
-### Content Length:
-- **Titles**: 2-8 words
-- **Subtitles**: 4-12 words  
-- **Content blocks**: 50-150 words (1-3 paragraphs)
-- **Captions**: 10-25 words
-- **Alt text**: 5-15 words, descriptive
-
-### Metrics/Outcomes:
-- Use specific numbers when possible
-- Include context for what the metrics mean
-- Focus on business impact and user value
-- Limit to 2-4 key metrics to avoid overwhelming
 
 ---
 
