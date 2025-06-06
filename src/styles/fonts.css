@@ -2,20 +2,40 @@
 
 /* For a regular font */
 @font-face {
-  font-family: 'PP Pangaia';
-  src: url('/fonts/pppangaia-medium.woff2') format('woff2'),
-       url('/fonts/pppangaia-medium.woff') format('woff');
+  font-family: 'pangaia';
+  src: url('/fonts/PPPangaia-Medium.woff2') format('woff2'),
+       url('/fonts/PPPangaia-Medium.woff') format('woff'),
+       url('/fonts/PPPangaia-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* For a bold variant */
 @font-face {
-  font-family: 'PP Neue Corp';
-  src: url('/fonts/pppneuecorp-regular.woff2') format('woff2'),
-       url('/fonts/pppneuecorp-regular.woff') format('woff');
-  font-weight: 400;
+  font-family: 'neuecorp';
+  src: url('/fonts/PPNeueCorp-CompactMedium.woff2') format('woff2'),
+       url('/fonts/PPNeueCorp-CompactMedium.woff') format('woff'),
+       url('/fonts/PPNeueCorp-CompactMedium.ttf') format('truetype');
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Font declarations with Safari compatibility */
+
+@font-face {
+  font-family: 'pangaia-italic';
+  src: url('/fonts/PPPangaia-MediumItalic.woff2') format('woff2'),
+       url('/fonts/PPPangaia-MediumItalic.woff') format('woff'),
+       url('/fonts/PPPangaia-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 } 
