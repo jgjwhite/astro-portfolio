@@ -4,11 +4,24 @@ export interface Props {
   alt: string;
   projectName: string;
   accentInfo: string;
+  videoSrc?: string;
 }
-const { imgSrc, alt, projectName, accentInfo } = Astro.props;
+const { imgSrc, alt, projectName, accentInfo, videoSrc } = Astro.props;
 ---
 <div class="relative group aspect-[4/3] bg-gray-200 rounded-[12px] overflow-hidden flex items-center justify-center cursor-pointer border-[5px] border-white">
-  <img src={imgSrc} alt={alt} class="object-cover w-full h-full transition-transform duration-150 group-hover:scale-[1.02]" />
+  {videoSrc ? (
+    <video
+      src={videoSrc}
+      poster={imgSrc}
+      class="object-cover w-full h-full transition-transform duration-150 group-hover:scale-[1.02]"
+      autoplay
+      loop
+      muted
+      playsinline
+    />
+  ) : (
+    <img src={imgSrc} alt={alt} class="object-cover w-full h-full transition-transform duration-150 group-hover:scale-[1.02]" />
+  )}
   <div class="absolute inset-0 bg-[rgba(0,0,0,0.03)] opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
   <div class="absolute left-3 bottom-3 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
     <span class="bg-white border border-gray-200 rounded-[4px] px-2 py-[2px] text-[12px] font-neuecorp font-medium">{projectName}</span>

@@ -28,16 +28,116 @@ import AboutSection from '../components/AboutSection.astro';
 				</div>
 				<div class="mt-12 mb-24 sm:mb-32 md:mb-48 grid grid-cols-1 sm:grid-cols-2 gap-4">
 					<a href="/ownright" class="block text-black">
-						<Thumbnail imgSrc="/assets/thumbnails/Thumbnail-ownright.webp" alt="Ownright Thumbnail" projectName="Internal legal app" accentInfo="Ownright Law" />
+						<div class="relative group aspect-[4/3] bg-gray-200 rounded-[12px] overflow-hidden flex items-center justify-center cursor-pointer border-[5px] border-white">
+							<video
+								id="ownright-video"
+								src="/assets/thumbnails/thumbnail-ownright-interaction.mp4"
+								poster="/assets/thumbnails/thumbnail-ownright.webp"
+								class="object-cover w-full h-full transition-transform duration-150 group-hover:scale-[1.02]"
+								preload="auto"
+								autoplay
+								loop
+								muted
+								playsinline
+								disablePictureInPicture
+								controlsList="nodownload nofullscreen noremoteplayback"
+								tabIndex="-1"
+							></video>
+
+							<script>
+								const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+								const video = document.getElementById("ownright-video");
+							  
+								if (isSafari && video) {
+								  video.parentNode.replaceChild(
+									Object.assign(document.createElement("img"), {
+									  src: video.poster,
+									  alt: "Ownright Thumbnail",
+									  className: video.className,
+									}),
+									video
+								  );
+								}
+							  </script>
+
+							<div class="absolute inset-0 bg-[rgba(0,0,0,0.03)] opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+							<div class="absolute left-3 bottom-3 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+								<span class="bg-white border border-gray-200 rounded-[4px] px-2 py-[2px] text-[12px] font-neuecorp font-medium">Internal legal app</span>
+								<span class="bg-white border border-gray-200 rounded-[4px] px-2 py-[2px] text-[12px] font-neuecorp font-medium">Ownright Law</span>
+							</div>
+						</div>
 					</a>
 					<a href="/lululemon" class="block text-black">
-						<Thumbnail imgSrc="/assets/thumbnails/Thumbnail-lululemon.webp" alt="lululemon Thumbnail" projectName="Wanderwell" accentInfo="lululemon" />
+						<div class="relative group aspect-[4/3] bg-gray-200 rounded-[12px] overflow-hidden flex items-center justify-center cursor-pointer border-[5px] border-white">
+							<video
+								id="lululemon-video"
+								src="/assets/thumbnails/thumbnail-lululemon-interaction.mp4"
+								poster="/assets/thumbnails/thumbnail-lululemon.webp"
+								class="object-cover w-full h-full transition-transform duration-150 group-hover:scale-[1.02]"
+								preload="auto"
+								autoplay
+								loop
+								muted
+								playsinline
+								disablepictureinpicture
+								controlslist="nodownload nofullscreen noremoteplayback"
+								tabindex="-1"
+								data-thumbnail
+							></video>
+							<div class="absolute inset-0 bg-[rgba(0,0,0,0.03)] opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+							<div class="absolute left-3 bottom-3 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+								<span class="bg-white border border-gray-200 rounded-[4px] px-2 py-[2px] text-[12px] font-neuecorp font-medium">Wanderwell</span>
+								<span class="bg-white border border-gray-200 rounded-[4px] px-2 py-[2px] text-[12px] font-neuecorp font-medium">lululemon</span>
+							</div>
+						</div>
 					</a>
 					<a href="/messenger" class="block text-black">
-						<Thumbnail imgSrc="/assets/thumbnails/Thumbnail-messenger.webp" alt="Messenger Thumbnail" projectName="Workplace x Messenger" accentInfo="Meta" />
+						<div class="relative group aspect-[4/3] bg-gray-200 rounded-[12px] overflow-hidden flex items-center justify-center cursor-pointer border-[5px] border-white">
+							<video
+								id="messenger-video"
+								src="/assets/thumbnails/thumbnail-messenger-interaction.mp4"
+								poster="/assets/thumbnails/thumbnail-messenger.webp"
+								class="object-cover w-full h-full transition-transform duration-150 group-hover:scale-[1.02]"
+								preload="auto"
+								autoplay
+								loop
+								muted
+								playsinline
+								disablepictureinpicture
+								controlslist="nodownload nofullscreen noremoteplayback"
+								tabindex="-1"
+								data-thumbnail
+							></video>
+							<div class="absolute inset-0 bg-[rgba(0,0,0,0.03)] opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+							<div class="absolute left-3 bottom-3 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+								<span class="bg-white border border-gray-200 rounded-[4px] px-2 py-[2px] text-[12px] font-neuecorp font-medium">Workplace x Messenger</span>
+								<span class="bg-white border border-gray-200 rounded-[4px] px-2 py-[2px] text-[12px] font-neuecorp font-medium">Meta</span>
+							</div>
+						</div>
 					</a>
 					<a href="/bulletins" class="block text-black">
-						<Thumbnail imgSrc="/assets/thumbnails/Thumbnail-bulletins.webp" alt="Bulletins Thumbnail" projectName="Workplace Bulletins" accentInfo="Meta" />
+						<div class="relative group aspect-[4/3] bg-gray-200 rounded-[12px] overflow-hidden flex items-center justify-center cursor-pointer border-[5px] border-white">
+							<video
+								id="bulletins-video"
+								src="/assets/thumbnails/thumbnail-bulletins-interaction.mp4"
+								poster="/assets/thumbnails/thumbnail-bulletins.webp"
+								class="object-cover w-full h-full transition-transform duration-150 group-hover:scale-[1.02]"
+								preload="auto"
+								autoplay
+								loop
+								muted
+								playsinline
+								disablepictureinpicture
+								controlslist="nodownload nofullscreen noremoteplayback"
+								tabindex="-1"
+								data-thumbnail
+							></video>
+							<div class="absolute inset-0 bg-[rgba(0,0,0,0.03)] opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+							<div class="absolute left-3 bottom-3 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+								<span class="bg-white border border-gray-200 rounded-[4px] px-2 py-[2px] text-[12px] font-neuecorp font-medium">Workplace Bulletins</span>
+								<span class="bg-white border border-gray-200 rounded-[4px] px-2 py-[2px] text-[12px] font-neuecorp font-medium">Meta</span>
+							</div>
+						</div>
 					</a>
 				</div>
 				<AboutSection
@@ -46,5 +146,25 @@ import AboutSection from '../components/AboutSection.astro';
 				/>
 			</main>
 		</Layout>
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+				if (!isSafari) return;
+
+				const videos = document.querySelectorAll('video[data-thumbnail]');
+				videos.forEach((video) => {
+					if (!(video instanceof HTMLVideoElement)) return;
+					
+					const parent = video.parentNode;
+					if (!parent) return;
+
+					const img = document.createElement('img');
+					img.src = video.getAttribute('poster') || '';
+					img.alt = video.getAttribute('alt') || "Project Thumbnail";
+					img.className = video.className;
+					parent.replaceChild(img, video);
+				});
+			});
+		</script>
 	</body>
 </html>
