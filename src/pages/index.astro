@@ -4,6 +4,7 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/shared/Navbar.astro';
 import Thumbnail from '../components/Thumbnail.astro';
 import AboutSection from '../components/AboutSection.astro';
+import SpinningText from '../components/SpinningText.astro';
 ---
 
 <html lang="en">
@@ -18,12 +19,13 @@ import AboutSection from '../components/AboutSection.astro';
 		<Layout title="Justin White - Portfolio">
 			<Navbar />
 			<main>
-				<div class="mt-20 max-w-[700px] mx-auto text-center">
+				<div class="mt-20 max-w-[700px] mx-auto text-center relative">
+					<SpinningText />
 					<h1 class="text-h1-hero">
 						Product Designer specialized in designing <span class="text-pangaia-italic">complex workflows</span>
 					</h1>
 					<p class="mt-1 md:mt-4 text-caption text-gray-500">
-						Previously designed for teams at Meta, Lululemon and Ecobee.
+						7 years of experience. Based in Canada 🇨🇦.
 					</p>
 				</div>
 				<div class="mt-12 mb-24 sm:mb-32 md:mb-48 grid grid-cols-1 sm:grid-cols-2 gap-4">

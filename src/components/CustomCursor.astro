@@ -11,9 +11,9 @@
   }
 
   .cursor-dot {
-    width: 12px;
-    height: 12px;
-    background-color: black;
+    width: 8px;
+    height: 8px;
+    background-color: #D00019;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -23,9 +23,9 @@
   }
 
   .cursor-outline {
-    width: 12px;
-    height: 12px;
-    background-color: black;
+    width: 8px;
+    height: 8px;
+    background-color: #D00019;
     border-radius: 50%;
     position: absolute;
     top: 50%;
@@ -42,8 +42,8 @@
 
   .cursor-hover .cursor-outline {
     transform: translate(-50%, -50%) scale(3.33);
-    border-color: black;
-    background: black;
+    border-color: #D00019;
+    background: #D00019;
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     animation: none;
@@ -54,13 +54,9 @@
       transform: translate(-50%, -50%) scale(1);
       opacity: 1;
     }
-    50% {
-      transform: translate(-50%, -50%) scale(2.67);
-      opacity: 0.4;
-    }
     100% {
-      transform: translate(-50%, -50%) scale(1);
-      opacity: 1;
+      transform: translate(-50%, -50%) scale(2.67);
+      opacity: 0;
     }
   }
 </style>
