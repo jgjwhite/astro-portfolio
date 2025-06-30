@@ -9,19 +9,22 @@ import NextPrevProject from '../components/case-study/NextPrevProject.astro';
 
 <CaseStudyLayout 
   title="Ownright Law" 
-  heroImageDesktop="/assets/case-studies/ownright/ownright-desktop.webp"
-  heroImageMobile="/assets/case-studies/ownright/ownright-mobile.webp"
-  heroIntroTitle="About Ownright"
-  heroIntroContent="Ownright is a real estate law startup that provides legal closing services to buyers and sellers in Ontario. Customers pay a flat fee per transaction, and our revenue scales with the volume of deals we complete. I led design across Ownright's digital products, with a focus on our internal platform used by legal and support staff."
+  heroImageDesktop="/assets/case-studies/ownright/ownright-hero-desktop.webp"
+  heroImageMobile="/assets/case-studies/ownright/ownright-hero-mobile.webp"
+  heroIntroTitle="Founding design @ Ownright"
+  heroIntroContent="I joined Ownright as the Founding Product Designer where I worked closely with the founding team to define and build out the road map for our legal conveyancing product, Convai."
+  heroIntroCaption="Ownright is a real estate law startup, helping home buyers and sellers close their homes after they've had an offer accepted. &quot;Conveyancing&quot; is the legal term for transferring ownership from one party to another."
 >
   <!-- Role & Timeline Section -->
   <section class="max-w-[960px] mx-auto" id="role">
     <SubList
       title="Role & timeline"
       items={[
-        { label: "Duration", value: "2024 to 2025" },
-        { label: "Team Size", value: "Founder/PM, 4 engineers" },
-        { label: "Role", value: "Lead Product Designer" }
+        { label: "Team", value: "Founder/PM, 4 Engineers, +1 Product Designer" },
+        { label: "Timeline", value: "2024 to 2025" },
+        { label: "Role", value: `Strategy
+Research
+Product design` }
       ]}
     />
   </section>
@@ -30,29 +33,58 @@ import NextPrevProject from '../components/case-study/NextPrevProject.astro';
   <section class="max-w-[960px] mx-auto" id="problem">
     <SplitText
       title="Problem"
-      content="When I joined, the legal team was using a mix of a Retool-built dashboard, third-party legal tools and spreadsheets to manage deals. These inefficiencies limited how many deals each of our legal and support staff could handle per month. We decided to build our own internal legal support tool, which consolidated fragmented workflows into a single interface, and I led the design from the ground up for it. Our KPI for this project was to increase the number of deals per support member per month that our team could handle (capacity) in order to unlock growth."
-      imageDesktop="/assets/case-studies/ownright/ownright-hero-desktop.webp"
-      imageMobile="/assets/case-studies/ownright/ownright-hero-mobile.webp"
+      content="Our legal team was wasting hours each week on manual closing steps like copying data, tracking deals in spreadsheets, and switching between closing tools. As a result, each lawyer could only handle a <span class='text-black'>limited number of deals per month</span>, which put a ceiling on how fast the company could grow."
+      imageDesktop="/assets/case-studies/ownright/ownright-problem-desktop.webp"
+      imageMobile="/assets/case-studies/ownright/ownright-problem-mobile.webp"
       imageAlt="Screenshot of the old workflow using Google Sheets"
+      imageCaption="Ownright offered clients a home closing tracker app that was powered by a backend legal process."
     />
   </section>
 
+  <!-- Problem Sizing Section -->
+  <section class="max-w-[960px] mx-auto" id="problem-sizing">
+    <SplitText
+      title="Problem sizing"
+      content="The problem impacted our legal support team of 4, however these issues were common at real estate law firms. In Ontario, there are more than 2,000 small to midsize law firms, spending approximately $2-4mm on conveyancing software annually.<br /><br /><span class='text-black'>Ownright's long term vision was to sell a better conveyancing app to these law firms in the future.</span>"
+      showTopBorder={false}
+    />
+  </section>
 
- <!-- Dashboard & CRM Section -->
-  <section class="max-w-[960px] mx-auto">
-    <SplitWidthImages
-      images={[
+  <!-- Problem in Numbers Section -->
+  <section class="max-w-[960px] mx-auto" id="problem-numbers">
+    <OutcomesGrid
+      title="Problem in numbers"
+      showTopBorder={false}
+      outcomes={[
         {
-          srcDesktop: "/assets/case-studies/ownright/ownright-dashboard-desktop.webp",
-          srcMobile: "/assets/case-studies/ownright/ownright-dashboard-mobile.webp",
-          alt: "Dashboard showing client matter status",
-          caption: "The new dashboard provides a clear overview of all client matters"
+          metricNumber: "5",
+          metricCaption: "Initial # of deals/lawyer/month, or our measure of capacity."
         },
         {
-          srcDesktop: "/assets/case-studies/ownright/ownright-crm-desktop.webp",
-          srcMobile: "/assets/case-studies/ownright/ownright-crm-mobile.webp",
-          alt: "CRM interface for managing client information",
-          caption: "The CRM helps track client communications and document status"
+          metricNumber: "20",
+          metricCaption: "# of deals/month we were closing when I joined."
+        }
+      ]}
+    />
+  </section>
+
+  <!-- Research Section -->
+  <section class="max-w-[960px] mx-auto" id="research">
+    <SubList
+      title="Research"
+      textContent="I led a continuous discovery process with our legal team to uncover their biggest issues. I joined their stand-ups, paired on workflows, and shared prototypes async to gather feedback. Common pain points included:"
+      items={[
+        {
+          label: "Multi-tasking",
+          value: "Lawyers often worked on multiple closings at once but lacked clear visibility across them, making it easy to miss important deadlines."
+        },
+        {
+          label: "Collaboration",
+          value: "The team needed to know who did what on which deal and what was next, but they didn't have inline tools to do so, so they relied on Slack messages to fill in the gaps."
+        },
+        {
+          label: "State visibility",
+          value: "Closings ranged from 7–60 days, with key milestones throughout. Early on, 1 in 4 deals missed deadlines and fell off track."
         }
       ]}
     />
@@ -72,44 +104,6 @@ import NextPrevProject from '../components/case-study/NextPrevProject.astro';
           metricCaption: "Revenue growth, year end 2024"
         }
       ]}
-    />
-  </section>
-
- 
-
-  <!-- Trust Accounting Section -->
-  <section class="max-w-[960px] mx-auto" id="trust">
-    <SplitText
-      title="Trust Accounting"
-      subtitle=""
-      content="Trust accounting was one of the most painful workflows — fragmented across Closer, Cosmolex, and manual notes. It was time-consuming, error-prone, and often deprioritized behind active closings since it was completed after deals were completed. I worked closely with legal to design a dedicated trust accounting workflow inside our internal tool."
-      imageDesktop="/assets/case-studies/ownright/ownright-trust-act-desktop.webp"
-      imageMobile="/assets/case-studies/ownright/ownright-trust-act-mobile.webp"
-      imageAlt="Screenshot of the trust accounting interface"
-    />
-  </section>
-
-  <!-- Design System Section -->
-  <section class="max-w-[960px] mx-auto" id="design">
-    <SplitText
-      title="Design System"
-      subtitle=""
-      content="As we scaled, I began building a shared design system, later formalized as Stucco. It covered component libraries, design tokens, and interaction patterns. I embedded our core design principles and heuristics into the system to align the team around best practices and the direction regarding how we wanted to shape our internal and external apps. Doing so helped increase alignment among the product team and, by extension, speed with which we could ship value to support."
-      imageDesktop="/assets/case-studies/ownright/ownright-design-sys-desktop.webp"
-      imageMobile="/assets/case-studies/ownright/ownright-design-sys-mobile.webp"
-      imageAlt="Screenshot of the design system"
-    />
-  </section>
-
-  <!-- Research Section -->
-  <section class="max-w-[960px] mx-auto" id="research">
-    <SplitText
-      title="Research"
-      subtitle=""
-      content="We didn't have the budget for formal research, so I built lightweight methods into our process. One of the early opportunities for further research regarded the lingering question of who our ideal client profile was. We didn't have a lot of data to answer the question with beyond google reviews. I led an initiative to survey our past clients with targeted questions to help segment them into different behavioural patterns."
-      imageDesktop="/assets/case-studies/ownright/ownright-research-desktop.webp"
-      imageMobile="/assets/case-studies/ownright/ownright-research-mobile.webp"
-      imageAlt="Screenshot of research findings"
     />
   </section>
 

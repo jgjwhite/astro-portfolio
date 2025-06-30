@@ -9,9 +9,10 @@ interface Props {
   heroImageMobile: string;
   heroIntroTitle?: string;
   heroIntroContent?: string;
+  heroIntroCaption?: string;
 }
 
-const { title, heroImageDesktop, heroImageMobile, heroIntroTitle, heroIntroContent } = Astro.props;
+const { title, heroImageDesktop, heroImageMobile, heroIntroTitle, heroIntroContent, heroIntroCaption } = Astro.props;
 ---
 
 <Layout title={title} bodyClass="case-study-page">
@@ -21,7 +22,7 @@ const { title, heroImageDesktop, heroImageMobile, heroIntroTitle, heroIntroConte
     <h1 class="text-h1 text-center mb-6 md:mb-8">
       {title}
     </h1>
-    <div class="mb-24 sm:mb-32 md:mb-48">
+    <div class="mb-12 sm:mb-16 md:mb-24">
       <div class="relative w-full bg-gray-100">
         <picture>
           <source media="(max-width: 640px)" srcset={heroImageMobile}>
@@ -42,6 +43,11 @@ const { title, heroImageDesktop, heroImageMobile, heroIntroTitle, heroIntroConte
             </div>
             <div class="md:w-1/2 w-full">
               <div class="text-body">{heroIntroContent}</div>
+              {heroIntroCaption && (
+                <div class="text-caption text-gray-600 pl-4 border-l border-gray-300 ml-1 mt-6">
+                  {heroIntroCaption}
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -49,7 +55,7 @@ const { title, heroImageDesktop, heroImageMobile, heroIntroTitle, heroIntroConte
     </div>
 
     <!-- Content Section -->
-    <div class="[&>*:not(:last-child)]:mb-24 [&>*:not(:last-child)]:sm:mb-32 [&>*:not(:last-child)]:md:mb-48">
+    <div class="[&>*:not(:last-child)]:mb-12 [&>*:not(:last-child)]:sm:mb-16 [&>*:not(:last-child)]:md:mb-24">
       <slot />
     </div>
 

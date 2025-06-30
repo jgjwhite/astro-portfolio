@@ -2,17 +2,18 @@
 interface Props {
   title?: string;
   subtitle?: string;
+  showTopBorder?: boolean;
   outcomes: Array<{
     metricNumber: string;
     metricCaption: string;
   }>;
 }
 
-const { title, subtitle, outcomes } = Astro.props;
+const { title, subtitle, showTopBorder = true, outcomes } = Astro.props;
 ---
 
 <div class="outcomes-grid-component max-w-[960px] mx-auto">
-  <hr class="border-t border-gray-300 w-full" />
+  {showTopBorder && <hr class="border-t border-gray-300 w-full" />}
   <div class="outcomes-grid-inner flex flex-col md:flex-row gap-6 md:gap-12 mt-6">
     <div class="md:w-1/2 w-full flex flex-col">
       {title && <div class="text-h2 mb-1 md:mb-2">{title}</div>}
@@ -23,7 +24,7 @@ const { title, subtitle, outcomes } = Astro.props;
         {outcomes.map((outcome) => (
           <div class="flex flex-col">
             <div class="text-metric" style="letter-spacing: -1px">{outcome.metricNumber}</div>
-            <div class="text-body mt-1 md:mt-2" style="color: #838383">
+            <div class="text-caption mt-1 md:mt-2" style="color: #838383">
               {outcome.metricCaption}
             </div>
           </div>

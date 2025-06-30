@@ -2,13 +2,14 @@
 interface Props {
   title?: string;
   subtitle?: string;
+  textContent?: string;
   items: Array<{
     label: string;
     value: string;
   }>;
 }
 
-const { title, subtitle, items } = Astro.props;
+const { title, subtitle, textContent, items } = Astro.props;
 ---
 
 <div class="sub-list-component max-w-[960px] mx-auto">
@@ -19,11 +20,14 @@ const { title, subtitle, items } = Astro.props;
       {subtitle && <div class="text-body" style="color: #838383">{subtitle}</div>}
     </div>
     <div class="md:w-1/2 w-full">
+      {textContent && (
+        <div class="text-body mb-8" set:html={textContent}></div>
+      )}
       <div class="flex flex-col">
         {items.map((item) => (
-          <div class="mb-3 last:mb-0">
-            <div class="text-body" style="color: #838383">{item.label}</div>
-            <div class="text-body mt-1">{item.value}</div>
+          <div class="mb-5 last:mb-0">
+            <div class="text-caption uppercase tracking-[0.25px]" style="color: #838383">{item.label}</div>
+            <div class="text-body mt-1" style="white-space: pre-line">{item.value}</div>
           </div>
         ))}
       </div>

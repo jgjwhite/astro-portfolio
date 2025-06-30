@@ -7,8 +7,10 @@ interface Props {
   imageMobile?: string;
   imageAlt?: string;
   imageCaption?: string;
+  caption?: string;
+  showTopBorder?: boolean;
 }
-const { title, subtitle, content, imageDesktop, imageMobile, imageAlt, imageCaption } = Astro.props;
+const { title, subtitle, content, imageDesktop, imageMobile, imageAlt, imageCaption, caption, showTopBorder = true } = Astro.props;
 ---
 
 <div class="split-text-component max-w-[960px] mx-auto">
@@ -23,14 +25,19 @@ const { title, subtitle, content, imageDesktop, imageMobile, imageAlt, imageCapt
       )}
     </div>
   )}
-  {!imageDesktop && !imageMobile && <hr class="border-t border-gray-300 w-full mb-6" />}
+  {!imageDesktop && !imageMobile && showTopBorder && <hr class="border-t border-gray-300 w-full mb-6" />}
   <div class="split-text-inner flex flex-col md:flex-row gap-6 md:gap-12">
     <div class="md:w-1/2 w-full flex flex-col">
       {title && <div class="text-h2 mb-1 md:mb-2">{title}</div>}
       {subtitle && <div class="text-body" style="color: #838383">{subtitle}</div>}
     </div>
     <div class="md:w-1/2 w-full">
-      <div class="text-body">{content}</div>
+      <div class="text-body" set:html={content}></div>
+      {caption && (
+        <div class="text-caption text-gray-600 pl-4 border-l border-gray-300 ml-1 mt-6">
+          {caption}
+        </div>
+      )}
     </div>
   </div>
 </div>
