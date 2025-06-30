@@ -1,0 +1,126 @@
+---
+interface ExtendedBlock {
+  type: 'content' | 'metrics';
+  label: string;
+  content?: string;
+  metricNumber?: string;
+  metricCaption?: string;
+}
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  content: string;
+  imageDesktop?: string;
+  imageMobile?: string;
+  imageAlt?: string;
+  imageCaption?: string;
+  caption?: string;
+  showTopBorder?: boolean;
+  extendedBlocks?: ExtendedBlock[];
+}
+
+const { title, subtitle, content, imageDesktop, imageMobile, imageAlt, imageCaption, caption, showTopBorder = true, extendedBlocks } = Astro.props;
+---
+
+<div class="split-text-component max-w-[960px] mx-auto">
+  {imageDesktop && imageMobile && imageAlt && (
+    <div class="mb-6">
+      <picture>
+        <source srcset={imageDesktop} media="(min-width: 641px)" />
+        <img src={imageMobile} alt={imageAlt} class="w-full h-auto rounded-[12px]" />
+      </picture>
+      {imageCaption && (
+        <div class="text-caption mt-1" style="color: #838383">{imageCaption}</div>
+      )}
+    </div>
+  )}
+  {!imageDesktop && !imageMobile && showTopBorder && <hr class="border-t border-gray-300 w-full mb-6" />}
+  <div class="split-text-inner flex flex-col md:flex-row gap-6 md:gap-12">
+    <div class="md:w-1/2 w-full flex flex-col">
+      {title && <div class="text-h2 mb-1 md:mb-2">{title}</div>}
+      {subtitle && <div class="text-body" style="color: #838383">{subtitle}</div>}
+    </div>
+    <div class="md:w-1/2 w-full">
+      <div class="text-body" set:html={content}></div>
+      {caption && (
+        <div class="text-caption text-gray-600 pl-4 border-l border-gray-300 ml-1 mt-6">
+          {caption}
+        </div>
+      )}
+      {extendedBlocks && extendedBlocks.length > 0 && (
+        <div class="mt-6">
+          {(() => {
+            const blocks = [];
+            for (let i = 0; i < extendedBlocks.length; i++) {
+              const block = extendedBlocks[i];
+              const nextBlock = extendedBlocks[i + 1];
+              
+              if (block.type === 'metrics' && nextBlock && nextBlock.type === 'metrics' && !nextBlock.label) {
+                // Group two consecutive metrics blocks
+                blocks.push(
+                  <div class={i > 0 ? "mt-6 sm:mt-12" : ""}>
+                    <div class="text-caption uppercase tracking-[0.25px]" style="color: #838383">{block.label}</div>
+                    <div class="grid grid-cols-2 gap-6 md:gap-8 mt-3">
+                      <div class="flex flex-col">
+                        <div class="text-metric" style="letter-spacing: -1px">{block.metricNumber}</div>
+                        <div class="text-caption mt-1 md:mt-2" style="color: #838383">
+                          {block.metricCaption}
+                        </div>
+                      </div>
+                      <div class="flex flex-col">
+                        <div class="text-metric" style="letter-spacing: -1px">{nextBlock.metricNumber}</div>
+                        <div class="text-caption mt-1 md:mt-2" style="color: #838383">
+                          {nextBlock.metricCaption}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+                i++; // Skip the next block since we've already processed it
+              } else if (block.type === 'metrics' && (!nextBlock || nextBlock.type !== 'metrics' || nextBlock.label)) {
+                // Single metrics block
+                blocks.push(
+                  <div class={i > 0 ? "mt-6 sm:mt-12" : ""}>
+                    <div class="text-caption uppercase tracking-[0.25px]" style="color: #838383">{block.label}</div>
+                    <div class="mt-3">
+                      <div class="text-metric" style="letter-spacing: -1px">{block.metricNumber}</div>
+                      <div class="text-caption mt-1 md:mt-2" style="color: #838383">
+                        {block.metricCaption}
+                      </div>
+                    </div>
+                  </div>
+                );
+              } else if (block.type === 'content') {
+                // Content block
+                blocks.push(
+                  <div class={i > 0 ? "mt-6 sm:mt-12" : ""}>
+                    <div class="text-caption uppercase tracking-[0.25px]" style="color: #838383">{block.label}</div>
+                    <div class="text-body mt-3" set:html={block.content}></div>
+                  </div>
+                );
+              }
+            }
+            return blocks;
+          })()}
+        </div>
+      )}
+    </div>
+  </div>
+</div>
+
+<style>
+@media (max-width: 640px) {
+  .split-text-inner .text-h2 {
+    margin-bottom: 4px !important;
+  }
+  .split-text-inner {
+    gap: 12px !important;
+  }
+}
+@media (min-width: 641px) {
+  .split-text-inner .text-h2 {
+    margin-bottom: 8px !important;
+  }
+}
+</style> 

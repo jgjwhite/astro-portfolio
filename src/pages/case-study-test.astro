@@ -1,11 +1,14 @@
 ---
 import CaseStudyLayout from '../layouts/CaseStudyLayout.astro';
 import SplitText from '../components/case-study/SplitText.astro';
+import SplitTextExtended from '../components/case-study/SplitTextExtended.astro';
 import OutcomesGrid from '../components/case-study/OutcomesGrid.astro';
 import NextPrevProject from '../components/case-study/NextPrevProject.astro';
 import VideoEmbed from '../components/case-study/VideoEmbed.astro';
 import SplitWidthImages from '../components/case-study/SplitWidthImages.astro';
 import MultiFullWidthImages from '../components/case-study/MultiFullWidthImages.astro';
+// import EmblaCarousel from '../components/case-study/EmblaCarousel.astro';
+import EmblaCarouselReact from '../components/case-study/EmblaCarouselReact.jsx';
 ---
 
 <CaseStudyLayout 
@@ -36,6 +39,32 @@ import MultiFullWidthImages from '../components/case-study/MultiFullWidthImages.
       title="Our Approach"
       content="We redesigned the internal dashboard to speed up onboarding and reduce legal backlogs."
       caption="Ownright is a real estate law startup helping buyers close their homes after they've had an offer accepted."
+    />
+  </section>
+
+  <!-- SplitTextExtended Test Section -->
+  <section class="max-w-[960px] mx-auto" id="split-text-extended-test">
+    <SplitTextExtended
+      title="Extended Component Test"
+      content="This is the main content block that demonstrates the SplitTextExtended component with additional blocks below."
+      extendedBlocks={[
+        {
+          type: 'content',
+          label: 'Additional Context',
+          content: 'This is a content block with additional information that appears below the main content.'
+        },
+        {
+          type: 'metrics',
+          label: 'Key Metrics',
+          metricNumber: '85%',
+          metricCaption: 'Improvement in processing speed'
+        },
+        {
+          type: 'content',
+          label: 'Implementation Notes',
+          content: 'The system was rolled out over 3 months with gradual adoption across all teams.'
+        }
+      ]}
     />
   </section>
 
@@ -130,6 +159,28 @@ import MultiFullWidthImages from '../components/case-study/MultiFullWidthImages.
           alt: "Lululemon hero image",
           caption: "Experience the perfect blend of style and performance"
         }
+      ]}
+    />
+  </section>
+
+  <!-- Embla Carousel Test Section -->
+  <section class="mb-12 sm:mb-16 md:mb-24">
+    {/*
+    <EmblaCarousel
+      client:load
+      slides={[
+        { imgSrc: "/assets/test/test-solution-desktop.webp", imgAlt: "Test Slide 1" },
+        { imgSrc: "/assets/test/test-solution-desktop.webp", imgAlt: "Test Slide 2" },
+        { imgSrc: "/assets/test/test-solution-desktop.webp", imgAlt: "Test Slide 3" }
+      ]}
+    />
+    */}
+    <EmblaCarouselReact
+      client:load
+      slides={[
+        { imgSrc: "/assets/test/test-solution-desktop.webp", imgAlt: "Test Slide 1" },
+        { imgSrc: "/assets/test/test-solution-desktop.webp", imgAlt: "Test Slide 2" },
+        { imgSrc: "/assets/test/test-solution-desktop.webp", imgAlt: "Test Slide 3" }
       ]}
     />
   </section>

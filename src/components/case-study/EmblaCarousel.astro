@@ -1,0 +1,67 @@
+---
+// EmblaCarousel.astro
+// Usage: <EmblaCarousel slides={[{ imgSrc, imgAlt }, ... ]} />
+/**
+ * @type {{ slides: Array<{ imgSrc: string; imgAlt: string }> }}
+ */
+const { slides } = Astro.props;
+---
+<div class="embla">
+  <div class="embla__viewport">
+    <div class="embla__container">
+      {slides.map((slide: { imgSrc: string; imgAlt: string }) => (
+        <div class="embla__slide">
+          <img src={slide.imgSrc} alt={slide.imgAlt} />
+        </div>
+      ))}
+    </div>
+  </div>
+  <div class="embla__controls mt-4 flex justify-center gap-4">
+    <button id="emblaPrev" type="button" class="px-3 py-1 bg-gray-200 rounded">Prev</button>
+    <button id="emblaNext" type="button" class="px-3 py-1 bg-gray-200 rounded">Next</button>
+  </div>
+</div>
+
+<script type="module" is:inline>
+  import EmblaCarousel from 'embla-carousel';
+  window.addEventListener('DOMContentLoaded', () => {
+    const viewport = document.querySelector('.embla__viewport');
+    const prevBtn = document.getElementById('emblaPrev');
+    const nextBtn = document.getElementById('emblaNext');
+    if (viewport) {
+      const embla = EmblaCarousel(viewport);
+      if (prevBtn) prevBtn.addEventListener('click', () => embla.scrollPrev());
+      if (nextBtn) nextBtn.addEventListener('click', () => embla.scrollNext());
+    }
+  });
+</script>
+
+<style>
+.embla {
+  max-width: 100%;
+  margin: 0 auto;
+}
+.embla__viewport {
+  overflow: hidden;
+  width: 100%;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  position: relative;
+  flex: 0 0 100%;
+  aspect-ratio: 16 / 9;
+  max-width: 1200px;
+  background: #f3f3f3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.embla__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+</style> 

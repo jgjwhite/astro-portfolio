@@ -1,5 +1,6 @@
 ---
 interface Props {
+  title?: string;
   images: Array<{
     srcDesktop: string;
     srcMobile: string;
@@ -8,10 +9,11 @@ interface Props {
   }>;
 }
 
-const { images } = Astro.props;
+const { title, images } = Astro.props;
 ---
 
 <div class="max-w-[960px] mx-auto">
+  {title && <div class="text-h2 mb-4">{title}</div>}
   {images.map((image) => (
     <div class="[&:not(:last-child)]:mb-8">
       <picture>
@@ -20,6 +22,7 @@ const { images } = Astro.props;
           src={image.srcMobile}
           alt={image.alt}
           class="w-full h-auto rounded-[12px]"
+          style="border: 1px solid #e5e7eb;"
         />
       </picture>
       {image.caption && (

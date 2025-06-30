@@ -5,6 +5,9 @@ import SubList from '../components/case-study/SubList.astro';
 import OutcomesGrid from '../components/case-study/OutcomesGrid.astro';
 import SplitWidthImages from '../components/case-study/SplitWidthImages.astro';
 import NextPrevProject from '../components/case-study/NextPrevProject.astro';
+import EmblaCarouselReact from '../components/case-study/EmblaCarouselReact.jsx';
+import MultiFullWidthImages from '../components/case-study/MultiFullWidthImages.astro';
+import SplitTextExtended from '../components/case-study/SplitTextExtended.astro';
 ---
 
 <CaseStudyLayout 
@@ -29,40 +32,42 @@ Product design` }
     />
   </section>
 
+  <!-- Problem Image Section -->
+  <section class="max-w-[960px] mx-auto">
+    <MultiFullWidthImages
+      images={[
+        {
+          srcDesktop: "/assets/case-studies/ownright/ownright-problem-desktop.webp",
+          srcMobile: "/assets/case-studies/ownright/ownright-problem-mobile.webp",
+          alt: "Screenshot of the old workflow using Google Sheets",
+          caption: "Ownright offered clients a home closing tracker app that was powered by a backend legal process."
+        }
+      ]}
+    />
+  </section>
+
   <!-- Problem Section -->
   <section class="max-w-[960px] mx-auto" id="problem">
-    <SplitText
+    <SplitTextExtended
       title="Problem"
       content="Our legal team was wasting hours each week on manual closing steps like copying data, tracking deals in spreadsheets, and switching between closing tools. As a result, each lawyer could only handle a <span class='text-black'>limited number of deals per month</span>, which put a ceiling on how fast the company could grow."
-      imageDesktop="/assets/case-studies/ownright/ownright-problem-desktop.webp"
-      imageMobile="/assets/case-studies/ownright/ownright-problem-mobile.webp"
-      imageAlt="Screenshot of the old workflow using Google Sheets"
-      imageCaption="Ownright offered clients a home closing tracker app that was powered by a backend legal process."
-    />
-  </section>
-
-  <!-- Problem Sizing Section -->
-  <section class="max-w-[960px] mx-auto" id="problem-sizing">
-    <SplitText
-      title="Problem sizing"
-      content="The problem impacted our legal support team of 4, however these issues were common at real estate law firms. In Ontario, there are more than 2,000 small to midsize law firms, spending approximately $2-4mm on conveyancing software annually.<br /><br /><span class='text-black'>Ownright's long term vision was to sell a better conveyancing app to these law firms in the future.</span>"
-      showTopBorder={false}
-    />
-  </section>
-
-  <!-- Problem in Numbers Section -->
-  <section class="max-w-[960px] mx-auto" id="problem-numbers">
-    <OutcomesGrid
-      title="Problem in numbers"
-      showTopBorder={false}
-      outcomes={[
+      extendedBlocks={[
         {
-          metricNumber: "5",
-          metricCaption: "Initial # of deals/lawyer/month, or our measure of capacity."
+          type: 'content',
+          label: 'Problem sizing',
+          content: 'The problem impacted our legal support team of 4, however these issues were common at real estate law firms. In Ontario, there are more than 2,000 small to midsize law firms, spending approximately $2-4mm on conveyancing software annually.<br /><br /><span class="text-black">Ownright\'s long term vision was to sell a better conveyancing app to these law firms in the future.</span>'
         },
         {
-          metricNumber: "20",
-          metricCaption: "# of deals/month we were closing when I joined."
+          type: 'metrics',
+          label: 'Problem in numbers',
+          metricNumber: '5',
+          metricCaption: 'Initial # of deals/lawyer/month, or our measure of capacity.'
+        },
+        {
+          type: 'metrics',
+          label: '',
+          metricNumber: '20',
+          metricCaption: '# of deals/month we were closing when I joined.'
         }
       ]}
     />
@@ -90,10 +95,81 @@ Product design` }
     />
   </section>
 
+  <!-- Building Convai Section -->
+  <section class="max-w-[960px] mx-auto mb-6" id="building-convai">
+    <SplitText
+      title="Building Convai"
+      content="To accomplish our goal of nearly doubling the number of deals/lawyer/month by addressing many of these issues uncovered in research, we decided our best chance was to <span class='text-black'>build an internal product that would support the legal conveyancing process</span> from end-to-end."
+    />
+  </section>
+
+  <!-- Ownright Carousel Section -->
+  <section class="mb-12 sm:mb-16 md:mb-24">
+    <EmblaCarouselReact
+      client:load
+      slides={[
+        {
+          imgSrc: "/assets/case-studies/ownright/ownright-system-map-desktop.webp",
+          imgSrcMobile: "/assets/case-studies/ownright/ownright-system-map-mobile.webp",
+          imgAlt: "Ownright System Map"
+        },
+        {
+          imgSrc: "/assets/case-studies/ownright/ownright-roadmap-desktop.webp",
+          imgSrcMobile: "/assets/case-studies/ownright/ownright-roadmap-mobile.webp",
+          imgAlt: "Ownright Roadmap"
+        },
+        {
+          imgSrc: "/assets/case-studies/ownright/ownright-journeys-desktop.webp",
+          imgSrcMobile: "/assets/case-studies/ownright/ownright-journeys-mobile.webp",
+          imgAlt: "Ownright Journeys"
+        },
+        {
+          imgSrc: "/assets/case-studies/ownright/ownright-prototyping-desktop.webp",
+          imgSrcMobile: "/assets/case-studies/ownright/ownright-prototyping-mobile.webp",
+          imgAlt: "Ownright Prototyping"
+        }
+      ]}
+    />
+  </section>
+
+  <!-- Multi Full Width Images Section -->
+  <section class="max-w-[960px] mx-auto">
+    <MultiFullWidthImages
+      title="Feature highlights"
+      images={[
+        {
+          srcDesktop: "/assets/case-studies/ownright/ownright-encumbrances-desktop.webp",
+          srcMobile: "/assets/case-studies/ownright/ownright-encumbrances-mobile.webp",
+          alt: "Ownright Encumbrances",
+          caption: "Features like Mortgage Tracking (called Encumbrances when selling a property) enabled the legal team to facilitate more of their process in Convai."
+        },
+        {
+          srcDesktop: "/assets/case-studies/ownright/ownright-peek-view-desktop.webp",
+          srcMobile: "/assets/case-studies/ownright/ownright-peek-view-mobile.webp",
+          alt: "Ownright Peek View",
+          caption: "We built tools like global todo lists and a deal peek view to help address the team's ability to multi-task deals in progress."
+        },
+        {
+          srcDesktop: "/assets/case-studies/ownright/ownright-dashboard-desktop.webp",
+          srcMobile: "/assets/case-studies/ownright/ownright-dashboard-mobile.webp",
+          alt: "Ownright Dashboard",
+          caption: "A centralized dashboard improved the state visibility of a lawyer's deals, and what needed attention at any given time."
+        },
+        {
+          srcDesktop: "/assets/case-studies/ownright/ownright-review-desktop.webp",
+          srcMobile: "/assets/case-studies/ownright/ownright-review-mobile.webp",
+          alt: "Ownright Review",
+          caption: "We incorporated inline note tools and status review widgets to facilitate greater collaboration on deals."
+        }
+      ]}
+    />
+  </section>
+
   <!-- Outcomes Section -->
   <section class="max-w-[960px] mx-auto" id="outcomes">
     <OutcomesGrid
       title="Outcomes"
+      textContent="To get to our goal of 80 deals/month, we both hired more lawyers and rolled out Convai such that our legal team was using it for ~90% of the process. By the end of the year, we had 8 people on our legal team and we reached a total of 80-90 deals per month, or 11-12 deals/lawyer/month."
       outcomes={[
         {
           metricNumber: "140%",
@@ -108,7 +184,7 @@ Product design` }
   </section>
 
   <!-- Next Project Section -->
-  <section class="mt-12 sm:mt-16 md:mt-24">
+  <section class="mt-24 sm:mt-32 md:mt-48">
     <NextPrevProject currentProject="ownright" />
   </section>
 </CaseStudyLayout> 
