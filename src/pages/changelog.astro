@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/shared/Navbar.astro';
+import Footer from '../components/shared/Footer.astro';
+import ChangelogItem from '../components/ChangelogItem.astro';
+---
+
+<Layout title="Changelog">
+  <Navbar />
+  <main class="mt-20" style="padding-bottom: 100px;">
+    <div class="max-w-[960px] mx-auto">
+      <h1 class="text-h1 text-center mb-24">Changelog</h1>
+      
+      <div class="changelog-list">
+        <ChangelogItem
+          date="2025-06-30"
+          label="Refactored Ownright case study with new components"
+          description="Added SplitTextExtended component, EmblaCarouselReact, and improved mobile spacing across all components."
+        />
+        
+        <ChangelogItem
+          date="2025-06-30"
+          label="Added carousel functionality"
+          description="Integrated Embla Carousel for image galleries with responsive design and navigation controls."
+        />
+    
+        
+        <ChangelogItem
+          date="2024-05-20"
+          label="Initial portfolio setup"
+          description="Built foundation with Astro, Tailwind CSS, and responsive layout system."
+        />
+      </div>
+    </div>
+  </main>
+</Layout> 

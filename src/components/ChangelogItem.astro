@@ -1,0 +1,32 @@
+---
+interface Props {
+  date: string;
+  label: string;
+  description?: string;
+}
+
+const { date, label, description } = Astro.props;
+---
+
+<div class="changelog-item flex border-b border-gray-200 items-start">
+  <div class="changelog-date text-body text-black min-w-[120px] flex-shrink-0 whitespace-nowrap" style="margin-right: 24px;">
+    {date}
+  </div>
+  <div class="flex-1">
+    <div class="text-body text-black mb-1">
+      {label}
+    </div>
+    {description && (
+      <div class="text-caption text-gray-500">
+        {description}
+      </div>
+    )}
+  </div>
+</div>
+
+<style>
+.changelog-item {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+</style> 
