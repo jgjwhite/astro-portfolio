@@ -41,9 +41,9 @@ import SpinningText from '../components/SpinningText.astro';
 								loop
 								muted
 								playsinline
-								disablePictureInPicture
-								controlsList="nodownload nofullscreen noremoteplayback"
-								tabIndex="-1"
+								disablepictureinpicture
+								controlslist="nodownload nofullscreen noremoteplayback"
+								tabindex="-1"
 							></video>
 
 							<script>
@@ -69,30 +69,6 @@ import SpinningText from '../components/SpinningText.astro';
 							</div>
 						</div>
 					</a>
-					<a href="/lululemon" class="block text-black">
-						<div class="relative group aspect-[4/3] bg-gray-200 rounded-[12px] overflow-hidden flex items-center justify-center cursor-pointer border-[5px] border-white">
-							<video
-								id="lululemon-video"
-								src="/assets/thumbnails/thumbnail-lululemon-interaction.mp4"
-								poster="/assets/thumbnails/Thumbnail-lululemon.webp"
-								class="object-cover w-full h-full transition-transform duration-150 group-hover:scale-[1.02]"
-								preload="auto"
-								autoplay
-								loop
-								muted
-								playsinline
-								disablepictureinpicture
-								controlslist="nodownload nofullscreen noremoteplayback"
-								tabindex="-1"
-								data-thumbnail
-							></video>
-							<div class="absolute inset-0 bg-[rgba(0,0,0,0.03)] opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
-							<div class="absolute left-3 bottom-3 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-								<span class="bg-white border border-gray-200 rounded-[4px] px-2 py-[2px] text-[12px] font-neuecorp font-medium">Wanderwell</span>
-								<span class="bg-white border border-gray-200 rounded-[4px] px-2 py-[2px] text-[12px] font-neuecorp font-medium">lululemon</span>
-							</div>
-						</div>
-					</a>
 					<a href="/messenger" class="block text-black">
 						<div class="relative group aspect-[4/3] bg-gray-200 rounded-[12px] overflow-hidden flex items-center justify-center cursor-pointer border-[5px] border-white">
 							<video
@@ -114,6 +90,30 @@ import SpinningText from '../components/SpinningText.astro';
 							<div class="absolute left-3 bottom-3 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
 								<span class="bg-white border border-gray-200 rounded-[4px] px-2 py-[2px] text-[12px] font-neuecorp font-medium">Workplace x Messenger</span>
 								<span class="bg-white border border-gray-200 rounded-[4px] px-2 py-[2px] text-[12px] font-neuecorp font-medium">Meta</span>
+							</div>
+						</div>
+					</a>
+					<a href="/lululemon" class="block text-black">
+						<div class="relative group aspect-[4/3] bg-gray-200 rounded-[12px] overflow-hidden flex items-center justify-center cursor-pointer border-[5px] border-white">
+							<video
+								id="lululemon-video"
+								src="/assets/thumbnails/thumbnail-lululemon-interaction.mp4"
+								poster="/assets/thumbnails/Thumbnail-lululemon.webp"
+								class="object-cover w-full h-full transition-transform duration-150 group-hover:scale-[1.02]"
+								preload="auto"
+								autoplay
+								loop
+								muted
+								playsinline
+								disablepictureinpicture
+								controlslist="nodownload nofullscreen noremoteplayback"
+								tabindex="-1"
+								data-thumbnail
+							></video>
+							<div class="absolute inset-0 bg-[rgba(0,0,0,0.03)] opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+							<div class="absolute left-3 bottom-3 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+								<span class="bg-white border border-gray-200 rounded-[4px] px-2 py-[2px] text-[12px] font-neuecorp font-medium">Wanderwell</span>
+								<span class="bg-white border border-gray-200 rounded-[4px] px-2 py-[2px] text-[12px] font-neuecorp font-medium">lululemon</span>
 							</div>
 						</div>
 					</a>
@@ -156,12 +156,11 @@ import SpinningText from '../components/SpinningText.astro';
 				const videos = document.querySelectorAll('video[data-thumbnail]');
 				videos.forEach((video) => {
 					if (!(video instanceof HTMLVideoElement)) return;
-					
 					const parent = video.parentNode;
 					if (!parent) return;
 
 					const img = document.createElement('img');
-					img.src = video.getAttribute('poster') || '';
+					img.src = (video as HTMLVideoElement).poster || '';
 					img.alt = video.getAttribute('alt') || "Project Thumbnail";
 					img.className = video.className;
 					parent.replaceChild(img, video);
