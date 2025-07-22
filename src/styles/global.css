@@ -69,6 +69,34 @@
   .text-pretty {
     text-wrap: pretty;
   }
+
+  /* Blur-in animation */
+  @keyframes blurIn {
+    0% {
+      opacity: 0;
+      filter: blur(40px);
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      filter: blur(0px);
+      transform: translateY(0px);
+    }
+  }
+
+  .animate-blur-in {
+    animation: blurIn 0.5s ease-out forwards;
+  }
+
+  .animate-blur-in-delay {
+    animation: blurIn 0.5s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+
+  .animate-blur-in-thumbnail {
+    animation: blurIn 0.5s ease-out 0.3s forwards;
+    opacity: 0;
+  }
 }
 
 /* Hide default cursor */

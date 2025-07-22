@@ -1,0 +1,25 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  imageLogo: string;
+}
+const { title, description, imageLogo } = Astro.props;
+---
+<div class="absolute left-6 bottom-6 sm:left-6 sm:bottom-6 animate-blur-in-thumbnail">
+  <div class="flex items-center space-x-3">
+        <img 
+      src={imageLogo} 
+      alt="Project logo" 
+      class="w-8 h-8 sm:w-11 sm:h-11 object-contain rounded"
+    />
+    <div class="flex flex-col min-w-0 justify-center space-y-0">
+      <h3 class="text-white text-sm sm:text-base font-neuecorp font-medium mb-0 truncate">
+        {title}
+      </h3>
+      <p class="text-white text-xs sm:text-sm font-neuecorp truncate">
+        {description}
+      </p>
+    </div>
+  </div>
+</div> 
